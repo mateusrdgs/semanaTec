@@ -45,13 +45,19 @@
             this.palestraRB = new System.Windows.Forms.RadioButton();
             this.minicursoRB = new System.Windows.Forms.RadioButton();
             this.descricaoTxt = new System.Windows.Forms.TextBox();
+            this.dataPck = new System.Windows.Forms.DateTimePicker();
+            this.horaPck = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.limparBtn = new System.Windows.Forms.Button();
+            this.salvarBtn = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomeLbl
             // 
             this.nomeLbl.AutoSize = true;
             this.nomeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeLbl.Location = new System.Drawing.Point(29, 26);
+            this.nomeLbl.Location = new System.Drawing.Point(5, 38);
             this.nomeLbl.Name = "nomeLbl";
             this.nomeLbl.Size = new System.Drawing.Size(51, 20);
             this.nomeLbl.TabIndex = 0;
@@ -61,7 +67,7 @@
             // 
             this.localLbl.AutoSize = true;
             this.localLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.localLbl.Location = new System.Drawing.Point(29, 59);
+            this.localLbl.Location = new System.Drawing.Point(5, 73);
             this.localLbl.Name = "localLbl";
             this.localLbl.Size = new System.Drawing.Size(47, 20);
             this.localLbl.TabIndex = 1;
@@ -71,7 +77,7 @@
             // 
             this.dataLbl.AutoSize = true;
             this.dataLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataLbl.Location = new System.Drawing.Point(312, 26);
+            this.dataLbl.Location = new System.Drawing.Point(304, 38);
             this.dataLbl.Name = "dataLbl";
             this.dataLbl.Size = new System.Drawing.Size(44, 20);
             this.dataLbl.TabIndex = 2;
@@ -81,7 +87,7 @@
             // 
             this.horaLbl.AutoSize = true;
             this.horaLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaLbl.Location = new System.Drawing.Point(312, 62);
+            this.horaLbl.Location = new System.Drawing.Point(300, 73);
             this.horaLbl.Name = "horaLbl";
             this.horaLbl.Size = new System.Drawing.Size(44, 20);
             this.horaLbl.TabIndex = 3;
@@ -91,7 +97,7 @@
             // 
             this.tipoLbl.AutoSize = true;
             this.tipoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tipoLbl.Location = new System.Drawing.Point(29, 94);
+            this.tipoLbl.Location = new System.Drawing.Point(5, 116);
             this.tipoLbl.Name = "tipoLbl";
             this.tipoLbl.Size = new System.Drawing.Size(39, 20);
             this.tipoLbl.TabIndex = 4;
@@ -101,17 +107,18 @@
             // 
             this.duracaoLbl.AutoSize = true;
             this.duracaoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.duracaoLbl.Location = new System.Drawing.Point(29, 143);
+            this.duracaoLbl.Location = new System.Drawing.Point(201, 157);
             this.duracaoLbl.Name = "duracaoLbl";
-            this.duracaoLbl.Size = new System.Drawing.Size(70, 20);
+            this.duracaoLbl.Size = new System.Drawing.Size(70, 40);
             this.duracaoLbl.TabIndex = 5;
-            this.duracaoLbl.Text = "Duração";
+            this.duracaoLbl.Text = "Duração\r\n(min)";
+            this.duracaoLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // descricaoLbl
             // 
             this.descricaoLbl.AutoSize = true;
             this.descricaoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descricaoLbl.Location = new System.Drawing.Point(29, 188);
+            this.descricaoLbl.Location = new System.Drawing.Point(10, 213);
             this.descricaoLbl.Name = "descricaoLbl";
             this.descricaoLbl.Size = new System.Drawing.Size(80, 20);
             this.descricaoLbl.TabIndex = 6;
@@ -121,7 +128,7 @@
             // 
             this.codPLbl.AutoSize = true;
             this.codPLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codPLbl.Location = new System.Drawing.Point(174, 143);
+            this.codPLbl.Location = new System.Drawing.Point(5, 157);
             this.codPLbl.Name = "codPLbl";
             this.codPLbl.Size = new System.Drawing.Size(90, 40);
             this.codPLbl.TabIndex = 7;
@@ -131,24 +138,25 @@
             // 
             this.vagasLbl.AutoSize = true;
             this.vagasLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vagasLbl.Location = new System.Drawing.Point(362, 146);
+            this.vagasLbl.Location = new System.Drawing.Point(355, 157);
             this.vagasLbl.Name = "vagasLbl";
-            this.vagasLbl.Size = new System.Drawing.Size(76, 20);
+            this.vagasLbl.Size = new System.Drawing.Size(55, 40);
             this.vagasLbl.TabIndex = 8;
-            this.vagasLbl.Text = "Nº Vagas";
+            this.vagasLbl.Text = "Nº \r\nVagas";
+            this.vagasLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // nomeTxt
             // 
             this.nomeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeTxt.Location = new System.Drawing.Point(85, 23);
+            this.nomeTxt.Location = new System.Drawing.Point(62, 35);
             this.nomeTxt.Name = "nomeTxt";
-            this.nomeTxt.Size = new System.Drawing.Size(208, 26);
+            this.nomeTxt.Size = new System.Drawing.Size(236, 26);
             this.nomeTxt.TabIndex = 9;
             // 
             // localTxt
             // 
             this.localTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.localTxt.Location = new System.Drawing.Point(85, 56);
+            this.localTxt.Location = new System.Drawing.Point(63, 68);
             this.localTxt.Name = "localTxt";
             this.localTxt.Size = new System.Drawing.Size(208, 26);
             this.localTxt.TabIndex = 10;
@@ -156,7 +164,7 @@
             // duracaoTxt
             // 
             this.duracaoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.duracaoTxt.Location = new System.Drawing.Point(105, 140);
+            this.duracaoTxt.Location = new System.Drawing.Point(277, 168);
             this.duracaoTxt.Name = "duracaoTxt";
             this.duracaoTxt.Size = new System.Drawing.Size(65, 26);
             this.duracaoTxt.TabIndex = 11;
@@ -164,7 +172,7 @@
             // codPTxt
             // 
             this.codPTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codPTxt.Location = new System.Drawing.Point(270, 143);
+            this.codPTxt.Location = new System.Drawing.Point(100, 168);
             this.codPTxt.Name = "codPTxt";
             this.codPTxt.Size = new System.Drawing.Size(86, 26);
             this.codPTxt.TabIndex = 12;
@@ -172,16 +180,16 @@
             // vagasTxt
             // 
             this.vagasTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vagasTxt.Location = new System.Drawing.Point(444, 143);
+            this.vagasTxt.Location = new System.Drawing.Point(416, 168);
             this.vagasTxt.Name = "vagasTxt";
-            this.vagasTxt.Size = new System.Drawing.Size(78, 26);
+            this.vagasTxt.Size = new System.Drawing.Size(68, 26);
             this.vagasTxt.TabIndex = 13;
             // 
             // palestraRB
             // 
             this.palestraRB.AutoSize = true;
             this.palestraRB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.palestraRB.Location = new System.Drawing.Point(85, 92);
+            this.palestraRB.Location = new System.Drawing.Point(62, 112);
             this.palestraRB.Name = "palestraRB";
             this.palestraRB.Size = new System.Drawing.Size(85, 24);
             this.palestraRB.TabIndex = 14;
@@ -193,7 +201,7 @@
             // 
             this.minicursoRB.AutoSize = true;
             this.minicursoRB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minicursoRB.Location = new System.Drawing.Point(200, 92);
+            this.minicursoRB.Location = new System.Drawing.Point(165, 116);
             this.minicursoRB.Name = "minicursoRB";
             this.minicursoRB.Size = new System.Drawing.Size(94, 24);
             this.minicursoRB.TabIndex = 15;
@@ -204,39 +212,96 @@
             // descricaoTxt
             // 
             this.descricaoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descricaoTxt.Location = new System.Drawing.Point(33, 211);
+            this.descricaoTxt.Location = new System.Drawing.Point(14, 236);
             this.descricaoTxt.Multiline = true;
             this.descricaoTxt.Name = "descricaoTxt";
-            this.descricaoTxt.Size = new System.Drawing.Size(489, 180);
+            this.descricaoTxt.Size = new System.Drawing.Size(490, 116);
             this.descricaoTxt.TabIndex = 16;
+            // 
+            // dataPck
+            // 
+            this.dataPck.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataPck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataPck.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataPck.Location = new System.Drawing.Point(354, 35);
+            this.dataPck.Name = "dataPck";
+            this.dataPck.Size = new System.Drawing.Size(150, 26);
+            this.dataPck.TabIndex = 17;
+            // 
+            // horaPck
+            // 
+            this.horaPck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horaPck.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horaPck.Location = new System.Drawing.Point(354, 68);
+            this.horaPck.Name = "horaPck";
+            this.horaPck.ShowUpDown = true;
+            this.horaPck.Size = new System.Drawing.Size(150, 26);
+            this.horaPck.TabIndex = 18;
+            this.horaPck.Value = new System.DateTime(2015, 10, 15, 16, 3, 0, 0);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.nomeLbl);
+            this.groupBox1.Controls.Add(this.descricaoTxt);
+            this.groupBox1.Controls.Add(this.horaPck);
+            this.groupBox1.Controls.Add(this.descricaoLbl);
+            this.groupBox1.Controls.Add(this.vagasTxt);
+            this.groupBox1.Controls.Add(this.minicursoRB);
+            this.groupBox1.Controls.Add(this.codPTxt);
+            this.groupBox1.Controls.Add(this.nomeTxt);
+            this.groupBox1.Controls.Add(this.vagasLbl);
+            this.groupBox1.Controls.Add(this.duracaoTxt);
+            this.groupBox1.Controls.Add(this.codPLbl);
+            this.groupBox1.Controls.Add(this.palestraRB);
+            this.groupBox1.Controls.Add(this.dataPck);
+            this.groupBox1.Controls.Add(this.dataLbl);
+            this.groupBox1.Controls.Add(this.horaLbl);
+            this.groupBox1.Controls.Add(this.duracaoLbl);
+            this.groupBox1.Controls.Add(this.localLbl);
+            this.groupBox1.Controls.Add(this.localTxt);
+            this.groupBox1.Controls.Add(this.tipoLbl);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 1);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(510, 358);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informações do evento";
+            // 
+            // limparBtn
+            // 
+            this.limparBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.limparBtn.Location = new System.Drawing.Point(84, 377);
+            this.limparBtn.Name = "limparBtn";
+            this.limparBtn.Size = new System.Drawing.Size(75, 30);
+            this.limparBtn.TabIndex = 20;
+            this.limparBtn.Text = "Limpar";
+            this.limparBtn.UseVisualStyleBackColor = true;
+            // 
+            // salvarBtn
+            // 
+            this.salvarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salvarBtn.Location = new System.Drawing.Point(289, 377);
+            this.salvarBtn.Name = "salvarBtn";
+            this.salvarBtn.Size = new System.Drawing.Size(75, 30);
+            this.salvarBtn.TabIndex = 21;
+            this.salvarBtn.Text = "Salvar";
+            this.salvarBtn.UseVisualStyleBackColor = true;
             // 
             // cadEventoForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 412);
-            this.Controls.Add(this.descricaoTxt);
-            this.Controls.Add(this.minicursoRB);
-            this.Controls.Add(this.palestraRB);
-            this.Controls.Add(this.vagasTxt);
-            this.Controls.Add(this.codPTxt);
-            this.Controls.Add(this.duracaoTxt);
-            this.Controls.Add(this.localTxt);
-            this.Controls.Add(this.nomeTxt);
-            this.Controls.Add(this.vagasLbl);
-            this.Controls.Add(this.codPLbl);
-            this.Controls.Add(this.descricaoLbl);
-            this.Controls.Add(this.duracaoLbl);
-            this.Controls.Add(this.tipoLbl);
-            this.Controls.Add(this.horaLbl);
-            this.Controls.Add(this.dataLbl);
-            this.Controls.Add(this.localLbl);
-            this.Controls.Add(this.nomeLbl);
+            this.Controls.Add(this.salvarBtn);
+            this.Controls.Add(this.limparBtn);
+            this.Controls.Add(this.groupBox1);
             this.Name = "cadEventoForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cadEventoForm";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -259,5 +324,10 @@
         private System.Windows.Forms.RadioButton palestraRB;
         private System.Windows.Forms.RadioButton minicursoRB;
         private System.Windows.Forms.TextBox descricaoTxt;
+        private System.Windows.Forms.DateTimePicker dataPck;
+        private System.Windows.Forms.DateTimePicker horaPck;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button limparBtn;
+        private System.Windows.Forms.Button salvarBtn;
     }
 }

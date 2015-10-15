@@ -50,6 +50,24 @@
     <Compile Include="Forms\cadEventoForms.Designer.cs">
       <DependentUpon>cadEventoForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\cadInscForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\cadInscForms.Designer.cs">
+      <DependentUpon>cadInscForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\cadPalesForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\cadPalesForms.Designer.cs">
+      <DependentUpon>cadPalesForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\cadPartForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\cadPartForms.Designer.cs">
+      <DependentUpon>cadPartForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +78,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\cadEventoForms.resx">
       <DependentUpon>cadEventoForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\cadInscForms.resx">
+      <DependentUpon>cadInscForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\cadPalesForms.resx">
+      <DependentUpon>cadPalesForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\cadPartForms.resx">
+      <DependentUpon>cadPartForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>

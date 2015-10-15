@@ -8,3 +8,6 @@ c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\De
 c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.pdb
 c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.Forms.cadEventoForms.resources
 c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.mainForm.resources
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.Forms.cadPalesForms.resources
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.Forms.cadPartForms.resources
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.Forms.cadInscForms.resources

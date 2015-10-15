@@ -18,6 +18,14 @@ namespace semanaTec
             InitializeComponent();
         }
         cadEventoForms cadEventoForm;
+        cadPalesForms cadPalesForm;
+        cadPartForms cadPartForm;
+        cadInscForms cadInscForm;
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+        }
 
         private void eventoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -27,7 +35,7 @@ namespace semanaTec
             }
             cadEventoForm = null;
 
-            if (cadEventoForm == null)
+            if (cadEventoForm == null || cadEventoForm.IsDisposed)
             {
                 cadEventoForm = new cadEventoForms();
             }
@@ -35,6 +43,60 @@ namespace semanaTec
             cadEventoForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             cadEventoForm.MdiParent = this;
             cadEventoForm.Show();   
+        }
+
+        private void palestranteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            cadPalesForm = null;
+
+            if (cadPalesForm == null || cadPalesForm.IsDisposed)
+            {
+                cadPalesForm = new cadPalesForms();
+            }
+
+            cadPalesForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            cadPalesForm.MdiParent = this;
+            cadPalesForm.Show();   
+        }
+
+        private void participanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            cadEventoForm = null;
+
+            if (cadPartForm == null || cadPartForm.IsDisposed)
+            {
+                cadPartForm = new cadPartForms();
+            }
+
+            cadPartForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            cadPartForm.MdiParent = this;
+            cadPartForm.Show();   
+        }
+
+        private void inscriçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            cadInscForm = null;
+
+            if (cadInscForm == null || cadInscForm.IsDisposed)
+            {
+                cadInscForm = new cadInscForms();
+            }
+
+            cadInscForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            cadInscForm.MdiParent = this;
+            cadInscForm.Show();  
         }
     }
 }

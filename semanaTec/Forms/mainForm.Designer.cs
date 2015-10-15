@@ -60,10 +60,10 @@
             // 
             this.cadastrarToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inscriçãoToolStripMenuItem,
             this.eventoToolStripMenuItem,
             this.palestranteToolStripMenuItem,
-            this.participanteToolStripMenuItem,
-            this.inscriçãoToolStripMenuItem});
+            this.participanteToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(89, 25);
@@ -81,18 +81,21 @@
             this.palestranteToolStripMenuItem.Name = "palestranteToolStripMenuItem";
             this.palestranteToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.palestranteToolStripMenuItem.Text = "Palestrante";
+            this.palestranteToolStripMenuItem.Click += new System.EventHandler(this.palestranteToolStripMenuItem_Click);
             // 
             // participanteToolStripMenuItem
             // 
             this.participanteToolStripMenuItem.Name = "participanteToolStripMenuItem";
             this.participanteToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.participanteToolStripMenuItem.Text = "Participante";
+            this.participanteToolStripMenuItem.Click += new System.EventHandler(this.participanteToolStripMenuItem_Click);
             // 
             // inscriçãoToolStripMenuItem
             // 
             this.inscriçãoToolStripMenuItem.Name = "inscriçãoToolStripMenuItem";
             this.inscriçãoToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.inscriçãoToolStripMenuItem.Text = "Inscrição";
+            this.inscriçãoToolStripMenuItem.Click += new System.EventHandler(this.inscriçãoToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
@@ -107,13 +110,13 @@
             // eventoToolStripMenuItem1
             // 
             this.eventoToolStripMenuItem1.Name = "eventoToolStripMenuItem1";
-            this.eventoToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
+            this.eventoToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
             this.eventoToolStripMenuItem1.Text = "Evento";
             // 
             // inscriçãoToolStripMenuItem1
             // 
             this.inscriçãoToolStripMenuItem1.Name = "inscriçãoToolStripMenuItem1";
-            this.inscriçãoToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
+            this.inscriçãoToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
             this.inscriçãoToolStripMenuItem1.Text = "Inscrição";
             // 
             // editarToolStripMenuItem
@@ -158,11 +161,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.mainMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mainMenu;
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Semana Tecnológica";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
