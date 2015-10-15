@@ -1,0 +1,10 @@
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\bin\Debug\semanaTec.exe.config
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\bin\Debug\semanaTec.exe
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\bin\Debug\semanaTec.pdb
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.csprojResolveAssemblyReference.cache
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.Properties.Resources.resources
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.csproj.GenerateResource.Cache
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.exe
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.pdb
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.Forms.cadEventoForms.resources
+c:\users\mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.mainForm.resources
