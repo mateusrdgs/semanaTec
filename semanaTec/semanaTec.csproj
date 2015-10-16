@@ -132,6 +132,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\semanaTec.Dominio\semanaTec.Dominio.csproj">
+      <Project>{f75b833a-748d-4f2c-b8e4-18417b4e7b6c}</Project>
+      <Name>semanaTec.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

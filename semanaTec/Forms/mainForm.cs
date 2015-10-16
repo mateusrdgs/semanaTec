@@ -1,4 +1,5 @@
-﻿using semanaTec.Forms;
+﻿using semanaTec.Dominio;
+using semanaTec.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace semanaTec
 {
@@ -23,6 +25,8 @@ namespace semanaTec
         cadInscForms cadInscForm;
         conEventoForms conEventoForm;
         conInscForms conInscForm;
+        Evento evento = new Evento();
+        Inscricao insc = new Inscricao();        
 
         private void mainForm_Load(object sender, EventArgs e)
         {
