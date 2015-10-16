@@ -110,14 +110,16 @@
             // eventoToolStripMenuItem1
             // 
             this.eventoToolStripMenuItem1.Name = "eventoToolStripMenuItem1";
-            this.eventoToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
+            this.eventoToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
             this.eventoToolStripMenuItem1.Text = "Evento";
+            this.eventoToolStripMenuItem1.Click += new System.EventHandler(this.eventoToolStripMenuItem1_Click);
             // 
             // inscriçãoToolStripMenuItem1
             // 
             this.inscriçãoToolStripMenuItem1.Name = "inscriçãoToolStripMenuItem1";
-            this.inscriçãoToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
+            this.inscriçãoToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
             this.inscriçãoToolStripMenuItem1.Text = "Inscrição";
+            this.inscriçãoToolStripMenuItem1.Click += new System.EventHandler(this.inscriçãoToolStripMenuItem1_Click);
             // 
             // editarToolStripMenuItem
             // 

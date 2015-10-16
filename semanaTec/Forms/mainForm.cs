@@ -21,6 +21,8 @@ namespace semanaTec
         cadPalesForms cadPalesForm;
         cadPartForms cadPartForm;
         cadInscForms cadInscForm;
+        conEventoForms conEventoForm;
+        conInscForms conInscForm;
 
         private void mainForm_Load(object sender, EventArgs e)
         {
@@ -97,6 +99,42 @@ namespace semanaTec
             cadInscForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             cadInscForm.MdiParent = this;
             cadInscForm.Show();  
+        }
+
+        private void eventoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            conEventoForm = null;
+
+            if (conEventoForm == null || conEventoForm.IsDisposed)
+            {
+                conEventoForm = new conEventoForms();
+            }
+
+            conEventoForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            conEventoForm.MdiParent = this;
+            conEventoForm.Show();   
+        }
+
+        private void inscriçãoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            conInscForm = null;
+
+            if (conInscForm == null || conInscForm.IsDisposed)
+            {
+                conInscForm = new conInscForms();
+            }
+
+            conInscForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            conInscForm.MdiParent = this;
+            conInscForm.Show();  
         }
     }
 }

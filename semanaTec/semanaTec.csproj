@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,6 +75,18 @@
     <Compile Include="Forms\cadPartForms.Designer.cs">
       <DependentUpon>cadPartForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\conEventoForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\conEventoForms.Designer.cs">
+      <DependentUpon>conEventoForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\conInscForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\conInscForms.Designer.cs">
+      <DependentUpon>conInscForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +95,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="semanaTec.cs" />
     <EmbeddedResource Include="Forms\cadEventoForms.resx">
       <DependentUpon>cadEventoForms.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\cadPartForms.resx">
       <DependentUpon>cadPartForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\conEventoForms.resx">
+      <DependentUpon>conEventoForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\conInscForms.resx">
+      <DependentUpon>conInscForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
@@ -100,6 +126,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
