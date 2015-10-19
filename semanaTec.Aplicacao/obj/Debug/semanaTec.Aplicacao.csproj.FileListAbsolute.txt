@@ -1,0 +1,9 @@
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Aplicacao\bin\Debug\semanaTec.Aplicacao.dll
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Aplicacao\bin\Debug\semanaTec.Aplicacao.pdb
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Aplicacao\bin\Debug\semanaTec.Dominio.dll
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Aplicacao\bin\Debug\semanaTec.Repositorio.dll
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Aplicacao\bin\Debug\semanaTec.Dominio.pdb
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Aplicacao\bin\Debug\semanaTec.Repositorio.pdb
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Aplicacao\obj\Debug\semanaTec.Aplicacao.csprojResolveAssemblyReference.cache
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Aplicacao\obj\Debug\semanaTec.Aplicacao.dll
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Aplicacao\obj\Debug\semanaTec.Aplicacao.pdb

@@ -48,6 +48,8 @@
             // 
             // eventoCB
             // 
+            this.eventoCB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.eventoCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventoCB.FormattingEnabled = true;
             this.eventoCB.Location = new System.Drawing.Point(214, 51);
@@ -70,6 +72,7 @@
             // 
             // eventoGV
             // 
+            this.eventoGV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.eventoGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventoGV.Location = new System.Drawing.Point(6, 115);
             this.eventoGV.Name = "eventoGV";

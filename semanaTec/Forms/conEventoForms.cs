@@ -15,6 +15,7 @@ namespace semanaTec.Forms
         public conEventoForms()
         {
             InitializeComponent();
+            ActiveControl = eventoCB;
         }
     }
 }

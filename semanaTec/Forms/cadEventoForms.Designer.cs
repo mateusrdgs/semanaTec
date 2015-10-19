@@ -46,10 +46,10 @@
             this.minicursoRB = new System.Windows.Forms.RadioButton();
             this.descricaoTxt = new System.Windows.Forms.TextBox();
             this.dataPck = new System.Windows.Forms.DateTimePicker();
-            this.horaPck = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.limparBtn = new System.Windows.Forms.Button();
             this.salvarBtn = new System.Windows.Forms.Button();
+            this.horaPck = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +151,7 @@
             this.nomeTxt.Location = new System.Drawing.Point(62, 35);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(236, 26);
-            this.nomeTxt.TabIndex = 9;
+            this.nomeTxt.TabIndex = 1;
             // 
             // localTxt
             // 
@@ -159,7 +159,7 @@
             this.localTxt.Location = new System.Drawing.Point(63, 68);
             this.localTxt.Name = "localTxt";
             this.localTxt.Size = new System.Drawing.Size(208, 26);
-            this.localTxt.TabIndex = 10;
+            this.localTxt.TabIndex = 2;
             // 
             // duracaoTxt
             // 
@@ -167,7 +167,7 @@
             this.duracaoTxt.Location = new System.Drawing.Point(277, 168);
             this.duracaoTxt.Name = "duracaoTxt";
             this.duracaoTxt.Size = new System.Drawing.Size(65, 26);
-            this.duracaoTxt.TabIndex = 11;
+            this.duracaoTxt.TabIndex = 8;
             // 
             // codPTxt
             // 
@@ -175,7 +175,7 @@
             this.codPTxt.Location = new System.Drawing.Point(100, 168);
             this.codPTxt.Name = "codPTxt";
             this.codPTxt.Size = new System.Drawing.Size(86, 26);
-            this.codPTxt.TabIndex = 12;
+            this.codPTxt.TabIndex = 7;
             // 
             // vagasTxt
             // 
@@ -183,16 +183,16 @@
             this.vagasTxt.Location = new System.Drawing.Point(416, 168);
             this.vagasTxt.Name = "vagasTxt";
             this.vagasTxt.Size = new System.Drawing.Size(68, 26);
-            this.vagasTxt.TabIndex = 13;
+            this.vagasTxt.TabIndex = 9;
             // 
             // palestraRB
             // 
             this.palestraRB.AutoSize = true;
             this.palestraRB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.palestraRB.Location = new System.Drawing.Point(62, 112);
+            this.palestraRB.Location = new System.Drawing.Point(62, 116);
             this.palestraRB.Name = "palestraRB";
             this.palestraRB.Size = new System.Drawing.Size(85, 24);
-            this.palestraRB.TabIndex = 14;
+            this.palestraRB.TabIndex = 5;
             this.palestraRB.TabStop = true;
             this.palestraRB.Text = "Palestra";
             this.palestraRB.UseVisualStyleBackColor = true;
@@ -204,7 +204,7 @@
             this.minicursoRB.Location = new System.Drawing.Point(165, 116);
             this.minicursoRB.Name = "minicursoRB";
             this.minicursoRB.Size = new System.Drawing.Size(94, 24);
-            this.minicursoRB.TabIndex = 15;
+            this.minicursoRB.TabIndex = 6;
             this.minicursoRB.TabStop = true;
             this.minicursoRB.Text = "Minicurso";
             this.minicursoRB.UseVisualStyleBackColor = true;
@@ -216,28 +216,18 @@
             this.descricaoTxt.Multiline = true;
             this.descricaoTxt.Name = "descricaoTxt";
             this.descricaoTxt.Size = new System.Drawing.Size(490, 116);
-            this.descricaoTxt.TabIndex = 16;
+            this.descricaoTxt.TabIndex = 10;
             // 
             // dataPck
             // 
             this.dataPck.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataPck.CustomFormat = "dd/MM/yy";
             this.dataPck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataPck.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataPck.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dataPck.Location = new System.Drawing.Point(354, 35);
             this.dataPck.Name = "dataPck";
             this.dataPck.Size = new System.Drawing.Size(150, 26);
-            this.dataPck.TabIndex = 17;
-            // 
-            // horaPck
-            // 
-            this.horaPck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaPck.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.horaPck.Location = new System.Drawing.Point(354, 68);
-            this.horaPck.Name = "horaPck";
-            this.horaPck.ShowUpDown = true;
-            this.horaPck.Size = new System.Drawing.Size(150, 26);
-            this.horaPck.TabIndex = 18;
-            this.horaPck.Value = new System.DateTime(2015, 10, 15, 16, 3, 0, 0);
+            this.dataPck.TabIndex = 3;
             // 
             // groupBox1
             // 
@@ -261,9 +251,9 @@
             this.groupBox1.Controls.Add(this.localTxt);
             this.groupBox1.Controls.Add(this.tipoLbl);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(510, 358);
+            this.groupBox1.Size = new System.Drawing.Size(510, 359);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informações do evento";
@@ -271,10 +261,10 @@
             // limparBtn
             // 
             this.limparBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.limparBtn.Location = new System.Drawing.Point(84, 377);
+            this.limparBtn.Location = new System.Drawing.Point(123, 377);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(75, 30);
-            this.limparBtn.TabIndex = 20;
+            this.limparBtn.TabIndex = 12;
             this.limparBtn.Text = "Limpar";
             this.limparBtn.UseVisualStyleBackColor = true;
             // 
@@ -284,9 +274,22 @@
             this.salvarBtn.Location = new System.Drawing.Point(289, 377);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(75, 30);
-            this.salvarBtn.TabIndex = 21;
+            this.salvarBtn.TabIndex = 11;
             this.salvarBtn.Text = "Salvar";
             this.salvarBtn.UseVisualStyleBackColor = true;
+            this.salvarBtn.Click += new System.EventHandler(this.salvarBtn_Click);
+            // 
+            // horaPck
+            // 
+            this.horaPck.CustomFormat = "hh:mm";
+            this.horaPck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horaPck.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.horaPck.Location = new System.Drawing.Point(354, 68);
+            this.horaPck.Name = "horaPck";
+            this.horaPck.ShowUpDown = true;
+            this.horaPck.Size = new System.Drawing.Size(150, 26);
+            this.horaPck.TabIndex = 4;
+            this.horaPck.Value = new System.DateTime(2015, 10, 17, 16, 3, 0, 0);
             // 
             // cadEventoForms
             // 
@@ -297,8 +300,9 @@
             this.Controls.Add(this.limparBtn);
             this.Controls.Add(this.groupBox1);
             this.Name = "cadEventoForms";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "cadEventoForm";
+            this.Load += new System.EventHandler(this.cadEventoForms_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -325,9 +329,9 @@
         private System.Windows.Forms.RadioButton minicursoRB;
         private System.Windows.Forms.TextBox descricaoTxt;
         private System.Windows.Forms.DateTimePicker dataPck;
-        private System.Windows.Forms.DateTimePicker horaPck;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button limparBtn;
         private System.Windows.Forms.Button salvarBtn;
+        private System.Windows.Forms.DateTimePicker horaPck;
     }
 }

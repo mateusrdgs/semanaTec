@@ -15,6 +15,7 @@ namespace semanaTec.Forms
         public cadInscForms()
         {
             InitializeComponent();
+            ActiveControl = palestraCB;
         }
     }
 }

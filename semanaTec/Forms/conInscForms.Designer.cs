@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cpfLbl = new System.Windows.Forms.Label();
-            this.cpfMsk = new System.Windows.Forms.MaskedTextBox();
-            this.inscGV = new System.Windows.Forms.DataGridView();
             this.buscarBtn = new System.Windows.Forms.Button();
+            this.inscGV = new System.Windows.Forms.DataGridView();
+            this.cpfMsk = new System.Windows.Forms.MaskedTextBox();
+            this.cpfLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inscGV)).BeginInit();
             this.SuspendLayout();
@@ -51,22 +51,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informações de inscrição";
             // 
-            // cpfLbl
+            // buscarBtn
             // 
-            this.cpfLbl.AutoSize = true;
-            this.cpfLbl.Location = new System.Drawing.Point(158, 57);
-            this.cpfLbl.Name = "cpfLbl";
-            this.cpfLbl.Size = new System.Drawing.Size(40, 20);
-            this.cpfLbl.TabIndex = 0;
-            this.cpfLbl.Text = "CPF";
-            // 
-            // cpfMsk
-            // 
-            this.cpfMsk.Location = new System.Drawing.Point(204, 54);
-            this.cpfMsk.Mask = "000,000,000-00";
-            this.cpfMsk.Name = "cpfMsk";
-            this.cpfMsk.Size = new System.Drawing.Size(119, 26);
-            this.cpfMsk.TabIndex = 1;
+            this.buscarBtn.Location = new System.Drawing.Point(222, 101);
+            this.buscarBtn.Name = "buscarBtn";
+            this.buscarBtn.Size = new System.Drawing.Size(75, 30);
+            this.buscarBtn.TabIndex = 2;
+            this.buscarBtn.Text = "Buscar";
+            this.buscarBtn.UseVisualStyleBackColor = true;
             // 
             // inscGV
             // 
@@ -76,14 +68,22 @@
             this.inscGV.Size = new System.Drawing.Size(498, 130);
             this.inscGV.TabIndex = 2;
             // 
-            // buscarBtn
+            // cpfMsk
             // 
-            this.buscarBtn.Location = new System.Drawing.Point(222, 101);
-            this.buscarBtn.Name = "buscarBtn";
-            this.buscarBtn.Size = new System.Drawing.Size(75, 30);
-            this.buscarBtn.TabIndex = 3;
-            this.buscarBtn.Text = "Buscar";
-            this.buscarBtn.UseVisualStyleBackColor = true;
+            this.cpfMsk.Location = new System.Drawing.Point(204, 54);
+            this.cpfMsk.Mask = "000,000,000-00";
+            this.cpfMsk.Name = "cpfMsk";
+            this.cpfMsk.Size = new System.Drawing.Size(119, 26);
+            this.cpfMsk.TabIndex = 1;
+            // 
+            // cpfLbl
+            // 
+            this.cpfLbl.AutoSize = true;
+            this.cpfLbl.Location = new System.Drawing.Point(158, 57);
+            this.cpfLbl.Name = "cpfLbl";
+            this.cpfLbl.Size = new System.Drawing.Size(40, 20);
+            this.cpfLbl.TabIndex = 0;
+            this.cpfLbl.Text = "CPF";
             // 
             // conInscForms
             // 

@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\validaCPF.cs" />
     <EmbeddedResource Include="Forms\cadEventoForms.resx">
       <DependentUpon>cadEventoForms.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +134,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\semanaTec.Aplicacao\semanaTec.Aplicacao.csproj">
+      <Project>{e34ba8d0-14c0-44e8-811e-3bb1f033b1e8}</Project>
+      <Name>semanaTec.Aplicacao</Name>
+    </ProjectReference>
     <ProjectReference Include="..\semanaTec.Dominio\semanaTec.Dominio.csproj">
       <Project>{f75b833a-748d-4f2c-b8e4-18417b4e7b6c}</Project>
       <Name>semanaTec.Dominio</Name>

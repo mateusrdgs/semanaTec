@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 34);
+            this.label1.Location = new System.Drawing.Point(9, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 0;
@@ -68,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 73);
+            this.label2.Location = new System.Drawing.Point(9, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 40);
             this.label2.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(384, 35);
+            this.label4.Location = new System.Drawing.Point(378, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
             this.label4.TabIndex = 3;
@@ -108,7 +108,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(195, 34);
+            this.label6.Location = new System.Drawing.Point(219, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 20);
             this.label6.TabIndex = 5;
@@ -147,19 +147,19 @@
             // nomeTxt
             // 
             this.nomeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomeTxt.Location = new System.Drawing.Point(89, 79);
+            this.nomeTxt.Location = new System.Drawing.Point(83, 45);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(415, 26);
-            this.nomeTxt.TabIndex = 9;
+            this.nomeTxt.TabIndex = 1;
             // 
             // cpfMsk
             // 
             this.cpfMsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cpfMsk.Location = new System.Drawing.Point(55, 31);
+            this.cpfMsk.Location = new System.Drawing.Point(83, 83);
             this.cpfMsk.Mask = "000,000,000-00";
             this.cpfMsk.Name = "cpfMsk";
             this.cpfMsk.Size = new System.Drawing.Size(121, 26);
-            this.cpfMsk.TabIndex = 10;
+            this.cpfMsk.TabIndex = 2;
             // 
             // cursoCB
             // 
@@ -194,32 +194,32 @@
             this.cursoCB.Location = new System.Drawing.Point(83, 32);
             this.cursoCB.Name = "cursoCB";
             this.cursoCB.Size = new System.Drawing.Size(270, 28);
-            this.cursoCB.TabIndex = 11;
+            this.cursoCB.TabIndex = 5;
             // 
             // periodoTxt
             // 
             this.periodoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.periodoTxt.Location = new System.Drawing.Point(453, 32);
+            this.periodoTxt.Location = new System.Drawing.Point(447, 32);
             this.periodoTxt.Name = "periodoTxt";
             this.periodoTxt.Size = new System.Drawing.Size(51, 26);
-            this.periodoTxt.TabIndex = 12;
+            this.periodoTxt.TabIndex = 6;
             // 
             // telTxt
             // 
             this.telTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telTxt.Location = new System.Drawing.Point(89, 125);
+            this.telTxt.Location = new System.Drawing.Point(83, 125);
             this.telTxt.Mask = "(00) 0000-0000";
             this.telTxt.Name = "telTxt";
             this.telTxt.Size = new System.Drawing.Size(117, 26);
-            this.telTxt.TabIndex = 13;
+            this.telTxt.TabIndex = 4;
             // 
             // emailTxt
             // 
             this.emailTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTxt.Location = new System.Drawing.Point(254, 31);
+            this.emailTxt.Location = new System.Drawing.Point(278, 80);
             this.emailTxt.Name = "emailTxt";
-            this.emailTxt.Size = new System.Drawing.Size(250, 26);
-            this.emailTxt.TabIndex = 14;
+            this.emailTxt.Size = new System.Drawing.Size(220, 26);
+            this.emailTxt.TabIndex = 3;
             // 
             // loginTxt
             // 
@@ -227,27 +227,28 @@
             this.loginTxt.Location = new System.Drawing.Point(83, 78);
             this.loginTxt.Name = "loginTxt";
             this.loginTxt.Size = new System.Drawing.Size(173, 26);
-            this.loginTxt.TabIndex = 15;
+            this.loginTxt.TabIndex = 7;
             // 
             // senhaTxt
             // 
             this.senhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.senhaTxt.Location = new System.Drawing.Point(343, 78);
             this.senhaTxt.Name = "senhaTxt";
-            this.senhaTxt.Size = new System.Drawing.Size(161, 26);
-            this.senhaTxt.TabIndex = 16;
+            this.senhaTxt.Size = new System.Drawing.Size(155, 26);
+            this.senhaTxt.TabIndex = 8;
             // 
             // perfilCB
             // 
             this.perfilCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.perfilCB.FormattingEnabled = true;
+            this.perfilCB.ItemHeight = 20;
             this.perfilCB.Items.AddRange(new object[] {
             "Aluno",
             "Administrador"});
             this.perfilCB.Location = new System.Drawing.Point(83, 119);
             this.perfilCB.Name = "perfilCB";
             this.perfilCB.Size = new System.Drawing.Size(121, 28);
-            this.perfilCB.TabIndex = 17;
+            this.perfilCB.TabIndex = 9;
             // 
             // infoPesGB
             // 
@@ -293,9 +294,10 @@
             this.salvarBtn.Location = new System.Drawing.Point(290, 372);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(75, 30);
-            this.salvarBtn.TabIndex = 20;
+            this.salvarBtn.TabIndex = 10;
             this.salvarBtn.Text = "Salvar";
             this.salvarBtn.UseVisualStyleBackColor = true;
+            this.salvarBtn.Click += new System.EventHandler(this.salvarBtn_Click);
             // 
             // limparBtn
             // 
@@ -303,7 +305,7 @@
             this.limparBtn.Location = new System.Drawing.Point(153, 372);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(75, 30);
-            this.limparBtn.TabIndex = 21;
+            this.limparBtn.TabIndex = 11;
             this.limparBtn.Text = "Limpar";
             this.limparBtn.UseVisualStyleBackColor = true;
             // 
@@ -317,7 +319,8 @@
             this.Controls.Add(this.infoAcadGB);
             this.Controls.Add(this.infoPesGB);
             this.Name = "cadPartForms";
-            this.Text = "cadPartForms";
+            this.Text = " ";
+            this.Load += new System.EventHandler(this.cadPartForms_Load);
             this.infoPesGB.ResumeLayout(false);
             this.infoPesGB.PerformLayout();
             this.infoAcadGB.ResumeLayout(false);

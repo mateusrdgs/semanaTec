@@ -15,6 +15,7 @@ namespace semanaTec.Forms
         public conInscForms()
         {
             InitializeComponent();
+            ActiveControl = cpfMsk;
         }
     }
 }

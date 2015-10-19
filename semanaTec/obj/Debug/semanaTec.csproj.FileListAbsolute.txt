@@ -15,3 +15,7 @@ C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec\bin\De
 C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.csprojResolveAssemblyReference.cache
 C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.exe
 C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec\obj\Debug\semanaTec.pdb
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\bin\Debug\semanaTec.Aplicacao.dll
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\bin\Debug\semanaTec.Repositorio.dll
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\bin\Debug\semanaTec.Aplicacao.pdb
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec\bin\Debug\semanaTec.Repositorio.pdb

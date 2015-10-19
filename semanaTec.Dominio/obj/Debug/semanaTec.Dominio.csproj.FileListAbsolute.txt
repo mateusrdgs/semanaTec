@@ -2,3 +2,4 @@ C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec.Domini
 C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec.Dominio\bin\Debug\semanaTec.Dominio.pdb
 C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec.Dominio\obj\Debug\semanaTec.Dominio.dll
 C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec.Dominio\obj\Debug\semanaTec.Dominio.pdb
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.Dominio\obj\Debug\semanaTec.Dominio.csprojResolveAssemblyReference.cache

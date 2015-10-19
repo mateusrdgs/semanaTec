@@ -39,7 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="eventoAplicacao.cs" />
+    <Compile Include="participanteAplicacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\semanaTec.Dominio\semanaTec.Dominio.csproj">
+      <Project>{f75b833a-748d-4f2c-b8e4-18417b4e7b6c}</Project>
+      <Name>semanaTec.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\semanaTec.Repositorio\semanaTec.Repositorio.csproj">
+      <Project>{18c348bc-3064-412c-9846-9f652b0f647f}</Project>
+      <Name>semanaTec.Repositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,14 +11,17 @@ namespace semanaTec.Dominio
         private string CPF;
         private string nome;
         private string curso;
-        private string periodo;
         private string telefone;
         private string email;
         private string login;
         private string senha;
-        private bool perfil = false;
+        private string perfil; //1 - ADMIN(TRUE) 0 - ALUNO(FALSE)
+        private int periodo;
 
-        public Participantes() { }
+        public Participantes()
+        {
+
+        }
 
         public string Cpf 
         {
@@ -34,12 +37,7 @@ namespace semanaTec.Dominio
         {
             get { return curso; }
             set { curso = value; }
-        }
-        public string Periodo 
-        {
-            get { return periodo; }
-            set { periodo = value; }
-        }
+        }        
         public string Telefone 
         {
             get { return telefone; }
@@ -60,10 +58,15 @@ namespace semanaTec.Dominio
             get { return senha; }
             set { senha = value; }
         }
-        public bool Perfil 
+        public string Perfil 
         {
             get { return perfil; }
             set { perfil = value; }
+        }
+        public int Periodo 
+        {
+            get { return periodo; }
+            set { periodo = value; }
         }
     }
 }

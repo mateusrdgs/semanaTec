@@ -15,6 +15,7 @@ namespace semanaTec.Forms
         public cadPalesForms()
         {
             InitializeComponent();
+            ActiveControl = nomeTxt;
         }
     }
 }

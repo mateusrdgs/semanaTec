@@ -1,4 +1,6 @@
-﻿using System;
+﻿using semanaTec.Aplicacao;
+using semanaTec.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +18,38 @@ namespace semanaTec.Forms
         {
             InitializeComponent();
         }
+
+        private void cadPartForms_Load(object sender, EventArgs e)
+        {
+            ActiveControl = nomeTxt;
+        }
+
+        private void salvarBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Participantes participante = new Participantes();
+                participanteAplicacao appPart = new participanteAplicacao();
+                cpfMsk.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                telTxt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                participante.Cpf = cpfMsk.Text;
+                participante.Nome = nomeTxt.Text;
+                participante.Curso = cursoCB.Text;
+                participante.Periodo = int.Parse(periodoTxt.Text);
+                participante.Telefone = telTxt.Text;
+                participante.Email = emailTxt.Text;
+                participante.Login = loginTxt.Text;
+                participante.Senha = senhaTxt.Text;
+                participante.Perfil = perfilCB.Text;
+                appPart.salvar(participante);
+                MessageBox.Show("Salvo com sucesso!");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro");
+            }
+        }
+
+
     }
 }

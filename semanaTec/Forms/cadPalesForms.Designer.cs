@@ -113,7 +113,7 @@
             this.nomeTxt.Location = new System.Drawing.Point(66, 38);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(433, 26);
-            this.nomeTxt.TabIndex = 6;
+            this.nomeTxt.TabIndex = 1;
             // 
             // miniCTxt
             // 
@@ -122,7 +122,7 @@
             this.miniCTxt.Multiline = true;
             this.miniCTxt.Name = "miniCTxt";
             this.miniCTxt.Size = new System.Drawing.Size(411, 178);
-            this.miniCTxt.TabIndex = 7;
+            this.miniCTxt.TabIndex = 6;
             // 
             // cidadeTxt
             // 
@@ -130,7 +130,7 @@
             this.cidadeTxt.Location = new System.Drawing.Point(283, 74);
             this.cidadeTxt.Name = "cidadeTxt";
             this.cidadeTxt.Size = new System.Drawing.Size(216, 26);
-            this.cidadeTxt.TabIndex = 8;
+            this.cidadeTxt.TabIndex = 3;
             // 
             // emailTxt
             // 
@@ -138,7 +138,7 @@
             this.emailTxt.Location = new System.Drawing.Point(88, 117);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(189, 26);
-            this.emailTxt.TabIndex = 9;
+            this.emailTxt.TabIndex = 4;
             // 
             // telMsk
             // 
@@ -147,7 +147,7 @@
             this.telMsk.Mask = "(00) 0000-0000";
             this.telMsk.Name = "telMsk";
             this.telMsk.Size = new System.Drawing.Size(116, 26);
-            this.telMsk.TabIndex = 10;
+            this.telMsk.TabIndex = 5;
             // 
             // titulacaoCB
             // 
@@ -160,7 +160,7 @@
             this.titulacaoCB.Location = new System.Drawing.Point(88, 74);
             this.titulacaoCB.Name = "titulacaoCB";
             this.titulacaoCB.Size = new System.Drawing.Size(124, 28);
-            this.titulacaoCB.TabIndex = 11;
+            this.titulacaoCB.TabIndex = 2;
             // 
             // salvarBtn
             // 
@@ -168,7 +168,7 @@
             this.salvarBtn.Location = new System.Drawing.Point(121, 370);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(75, 30);
-            this.salvarBtn.TabIndex = 12;
+            this.salvarBtn.TabIndex = 8;
             this.salvarBtn.Text = "Salvar";
             this.salvarBtn.UseVisualStyleBackColor = true;
             // 
@@ -178,7 +178,7 @@
             this.limparBtn.Location = new System.Drawing.Point(352, 370);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(75, 30);
-            this.limparBtn.TabIndex = 13;
+            this.limparBtn.TabIndex = 7;
             this.limparBtn.Text = "Limpar";
             this.limparBtn.UseVisualStyleBackColor = true;
             // 

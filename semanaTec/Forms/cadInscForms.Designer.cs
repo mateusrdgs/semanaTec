@@ -77,7 +77,7 @@
             this.palestraCB.Location = new System.Drawing.Point(79, 21);
             this.palestraCB.Name = "palestraCB";
             this.palestraCB.Size = new System.Drawing.Size(187, 28);
-            this.palestraCB.TabIndex = 3;
+            this.palestraCB.TabIndex = 1;
             // 
             // cpfMsk
             // 
@@ -86,7 +86,7 @@
             this.cpfMsk.Mask = "000,000,000-00";
             this.cpfMsk.Name = "cpfMsk";
             this.cpfMsk.Size = new System.Drawing.Size(121, 26);
-            this.cpfMsk.TabIndex = 4;
+            this.cpfMsk.TabIndex = 2;
             // 
             // dataPck
             // 
@@ -95,7 +95,7 @@
             this.dataPck.Location = new System.Drawing.Point(79, 111);
             this.dataPck.Name = "dataPck";
             this.dataPck.Size = new System.Drawing.Size(100, 26);
-            this.dataPck.TabIndex = 5;
+            this.dataPck.TabIndex = 3;
             // 
             // limparBtn
             // 
@@ -103,7 +103,7 @@
             this.limparBtn.Location = new System.Drawing.Point(137, 199);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(75, 30);
-            this.limparBtn.TabIndex = 6;
+            this.limparBtn.TabIndex = 5;
             this.limparBtn.Text = "Limpar";
             this.limparBtn.UseVisualStyleBackColor = true;
             // 
@@ -113,7 +113,7 @@
             this.salvarBtn.Location = new System.Drawing.Point(300, 199);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(75, 30);
-            this.salvarBtn.TabIndex = 7;
+            this.salvarBtn.TabIndex = 4;
             this.salvarBtn.Text = "Salvar";
             this.salvarBtn.UseVisualStyleBackColor = true;
             // 
@@ -128,7 +128,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(510, 161);
+            this.groupBox1.Size = new System.Drawing.Size(503, 161);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inscrição de evento";

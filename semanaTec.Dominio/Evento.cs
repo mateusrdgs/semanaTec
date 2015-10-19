@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace semanaTec.Dominio
 {
     public class Evento
-    {
+    { 
         private string nome;
         private string local;
         private string data;
@@ -16,10 +16,13 @@ namespace semanaTec.Dominio
         private string descricao;
         private int codigo;
         private int duracao;
-        private int codPal;
+        private int codPales;
         private int vagas;
 
-        public Evento() { }
+        public Evento() 
+        { 
+        
+        }
 
         public string Nome 
         {
@@ -63,8 +66,8 @@ namespace semanaTec.Dominio
         }
         public int CodPal 
         {
-            get { return codPal; }
-            set { codPal = value; }
+            get { return codPales; }
+            set { codPales = value; }
         }
         public int Vagas 
         {
