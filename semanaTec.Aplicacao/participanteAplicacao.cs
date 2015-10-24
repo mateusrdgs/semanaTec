@@ -13,7 +13,7 @@ namespace semanaTec.Aplicacao
     {
         private Contexto contexto;
 
-        private void inserir(Participantes participante)
+        private void insereParticipante(Participantes participante)
         {
             var strInsert = "";
             strInsert += @"INSERT INTO tblParticipante (sCPF, sNome, sCurso, 
@@ -28,10 +28,10 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strInsert);
             }
         }
-        private void alterar(Participantes participante)
+        private void atualizaParticipante(Participantes participante)
         {
             var strUpdate = "";
-            strUpdate += @"tblParticipante SET";
+            strUpdate += @"UPDATE tblParticipante SET";
             strUpdate += string.Format(@"sCPF = '{0}', sNome = '{1}', sCurso = '{2},
             nPeriodo = '{3}', sTelefone = '{4}, sEmail = '{5}', sLogin = '{6}', 
             sSenha = {7}, sPerfil = '{8}')", participante.Cpf, participante.Nome, 
@@ -42,17 +42,17 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strUpdate);
             }
         }
-        public void salvar(Participantes participante)
+        public void salvaParticipante(Participantes participante)
         {
             
-            if(participante.Cpf == (listarParticipantes().Where(x=>x.Cpf == participante.Cpf)).ToString())
+            if(participante.Cpf == (selectParticipantes().Where(x=>x.Cpf == participante.Cpf)).ToString())
             {
-                alterar(participante);
+                atualizaParticipante(participante);
             }
             else
-                inserir(participante);
+                insereParticipante(participante);
         }
-        public void excluir(string CPF)
+        public void deletaParticipante(string CPF)
         {
             var strDelete = string.Format(@"DELETE FROM tblParticipante WHERE sCPF = {0}", CPF);
             using(contexto = new Contexto())
@@ -60,16 +60,16 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strDelete);
             }
         }
-        public List<Participantes> listarParticipantes()
+        public List<Participantes> selectParticipantes()
         {
             var strSelect = "SELECT * FROM tblParticipante";
             using(contexto = new Contexto())
             {
                 var retornoDataReader = contexto.executaComandoRetorno(strSelect);
-                return readerToObjectList(retornoDataReader);
+                return participanteReaderToObjectList(retornoDataReader);
             }
         }
-        public List<Participantes> readerToObjectList(SqlDataReader reader)
+        public List<Participantes> participanteReaderToObjectList(SqlDataReader reader)
         {
             var participantes = new List<Participantes>();
             while(reader.Read())

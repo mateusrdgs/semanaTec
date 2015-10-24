@@ -13,7 +13,7 @@ namespace semanaTec.Aplicacao
     {
         private Contexto contexto;
 
-        private void inserir(Evento evento)
+        public void insereEvento(Evento evento)
         {
             var strInsert = "";
             strInsert += @"INSERT INTO tblEvento (sNome, sLocal, sData, 
@@ -28,7 +28,7 @@ namespace semanaTec.Aplicacao
             }
         }
 
-        private void alterar(Evento evento)
+        public void atualizaEvento(Evento evento)
         {
             var strUpdate = "";
             strUpdate += @"UPDATE tblEvento SET ";
@@ -42,16 +42,16 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strUpdate);
             }
         }
-        public void salvar(Evento evento)
+        public void salvaEvento(Evento evento)
         {
-            if (evento.Codigo > 0)
+            if(evento.Codigo > 0)
             {
-                alterar(evento);
+                atualizaEvento(evento);
             }
             else
-                inserir(evento);
+                insereEvento(evento);
         }
-        public void excluir(int codigo)
+        public void deletaEvento(int codigo)
         {
             var strDelete = string.Format(@"DELETE FROM tblEvento 
             WHERE nCodEven = {0}", codigo);
@@ -60,16 +60,17 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strDelete);
             }
         }
-        public List<Evento> listarEventos()
+        public List<Evento> selectEventos()
         {
             var strSelect = "SELECT * FROM tblEvento";
             using (contexto = new Contexto())
             {                
                 var retornoDataReader = contexto.executaComandoRetorno(strSelect);
-                return readerToObjectList(retornoDataReader);
+                return eventoReaderToObjectList(retornoDataReader);
             }
         }
-        public List<Evento> readerToObjectList(SqlDataReader reader)
+
+        public List<Evento> eventoReaderToObjectList(SqlDataReader reader)
         {
             var eventos = new List<Evento>();
             while (reader.Read())
@@ -91,6 +92,39 @@ namespace semanaTec.Aplicacao
             }
             reader.Close();
             return eventos;
+        }
+
+        public Evento selectEventoWhere(string nome)
+        {
+            var strSelectWhere = string.Format("SELECT * FROM tblEvento WHERE sNome = {0}", nome);
+            using (contexto = new Contexto())
+            {
+                var retornoDataReader = contexto.executaComandoRetorno(strSelectWhere);
+                return eventoReaderToObject(retornoDataReader);
+            }
+        }
+        public Evento eventoReaderToObject(SqlDataReader reader)
+        {
+            var evento = new Evento();
+            while (reader.Read())
+            {
+                var temp = new Evento()
+                {
+                    Codigo = int.Parse(reader["nCodEven"].ToString()),
+                    Nome = reader["sNome"].ToString(),
+                    Local = reader["sLocal"].ToString(),
+                    Data = reader["dData"].ToString(),
+                    Hora = reader["hHora"].ToString(),
+                    Tipo = reader["sTipo"].ToString(),
+                    Duracao = int.Parse(reader["nDuracao"].ToString()),
+                    Descricao = reader["sDescricao"].ToString(),
+                    CodPal = int.Parse(reader["nCodPales"].ToString()),
+                    Vagas = int.Parse(reader["nVagas"].ToString())
+                };
+                evento = temp;
+            }
+            reader.Close();
+            return evento;
         }
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "semanaTec", "semanaTec\semanaTec.csproj", "{E6FB3E00-B9FA-4342-A197-ADFF6B311B18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "semanaTec.UI", "semanaTec\semanaTec.UI.csproj", "{E6FB3E00-B9FA-4342-A197-ADFF6B311B18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "semanaTec.Dominio", "semanaTec.Dominio\semanaTec.Dominio.csproj", "{F75B833A-748D-4F2C-B8E4-18417B4E7B6C}"
 EndProject

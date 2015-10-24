@@ -8,7 +8,7 @@ namespace semanaTec.Dominio
 {
     public class Inscricao
     {
-        private string CPF;
+        private Participantes participante = new Participantes();
         private string data;
         private int codigo;
         private Evento evento = new Evento();
@@ -21,8 +21,8 @@ namespace semanaTec.Dominio
         
         public string Cpf 
         {
-            get { return CPF; }
-            set { CPF = value; }
+            get { return participante.Cpf; }
+            set { participante.Cpf = value; }
         }
         public string Data 
         {
