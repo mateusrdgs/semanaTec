@@ -44,7 +44,7 @@ namespace semanaTec.Aplicacao
         }
         public void salvaEvento(Evento evento)
         {
-            if(evento.Codigo > 0)
+             if(evento.Codigo > 0)
             {
                 atualizaEvento(evento);
             }
