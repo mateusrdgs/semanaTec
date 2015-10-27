@@ -32,15 +32,6 @@
             this.eventoCB = new System.Windows.Forms.ComboBox();
             this.eventoInfo = new System.Windows.Forms.GroupBox();
             this.eventoGV = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Local = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Duracao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodPales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vagas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eventoInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventoGV)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +50,7 @@
             // 
             this.eventoCB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.eventoCB.DisplayMember = "sNome";
             this.eventoCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventoCB.FormattingEnabled = true;
             this.eventoCB.Location = new System.Drawing.Point(214, 51);
@@ -86,84 +78,11 @@
             this.eventoGV.AllowUserToAddRows = false;
             this.eventoGV.AllowUserToDeleteRows = false;
             this.eventoGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventoGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Local,
-            this.Data,
-            this.Hora,
-            this.Tipo,
-            this.Duracao,
-            this.Descricao,
-            this.CodPales,
-            this.Vagas});
             this.eventoGV.Location = new System.Drawing.Point(6, 137);
             this.eventoGV.Name = "eventoGV";
             this.eventoGV.ReadOnly = true;
             this.eventoGV.Size = new System.Drawing.Size(666, 267);
             this.eventoGV.TabIndex = 2;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "sNome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Local
-            // 
-            this.Local.DataPropertyName = "sData";
-            this.Local.HeaderText = "Local";
-            this.Local.Name = "Local";
-            this.Local.ReadOnly = true;
-            // 
-            // Data
-            // 
-            this.Data.DataPropertyName = "sData";
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
-            // 
-            // Hora
-            // 
-            this.Hora.DataPropertyName = "sHora";
-            this.Hora.HeaderText = "Hora";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.DataPropertyName = "sTipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // Duracao
-            // 
-            this.Duracao.DataPropertyName = "nDuracao";
-            this.Duracao.HeaderText = "Duracao";
-            this.Duracao.Name = "Duracao";
-            this.Duracao.ReadOnly = true;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "sDescricao";
-            this.Descricao.HeaderText = "Descricao";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            // 
-            // CodPales
-            // 
-            this.CodPales.DataPropertyName = "nCodPales";
-            this.CodPales.HeaderText = "CodPales";
-            this.CodPales.Name = "CodPales";
-            this.CodPales.ReadOnly = true;
-            // 
-            // Vagas
-            // 
-            this.Vagas.DataPropertyName = "Vagas";
-            this.Vagas.HeaderText = "Vagas";
-            this.Vagas.Name = "Vagas";
-            this.Vagas.ReadOnly = true;
             // 
             // conEventoForms
             // 
@@ -187,15 +106,6 @@
         private System.Windows.Forms.ComboBox eventoCB;
         private System.Windows.Forms.GroupBox eventoInfo;
         private System.Windows.Forms.DataGridView eventoGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Local;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Duracao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodPales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vagas;
 
     }
 }

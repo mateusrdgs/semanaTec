@@ -16,7 +16,7 @@ namespace semanaTec.Aplicacao
         private void insereInscricao(Inscricao inscricao)
         {
             var strInsert = "";
-            strInsert += @"INSERT INTO tblInscricao (sCPF, sData, nCodEv)";
+            strInsert += @"INSERT INTO tblInscricao (sCPF, dData, nCodEv)";
             strInsert = string.Format(@"VALUES ('{0}', '{1}', '{2}", 
             inscricao.Cpf, inscricao.Data, inscricao.Evento);
             using(contexto = new Contexto())
@@ -29,7 +29,7 @@ namespace semanaTec.Aplicacao
             var strUpdate = "";
             strUpdate += @"UPDATE tblInscricao SET ";
             strUpdate += string.Format(@"sCPF = '{0}', 
-            sData = '{1}', nCodEv = '{2}')", inscricao.Cpf,
+            dData = '{1}', nCodEv = '{2}')", inscricao.Cpf,
             inscricao.Data, inscricao.Evento);
             using(contexto = new Contexto())
             {
@@ -68,7 +68,7 @@ namespace semanaTec.Aplicacao
                 {
                     Codigo = int.Parse(reader["nCodInsc"].ToString()),
                     Cpf = (reader["sCPF"].ToString()),
-                    Data = (reader["sData"].ToString()),
+                    Data = (reader["dData"].ToString()),
                     Evento = int.Parse(reader["nCodEv"].ToString())
                 };
                 inscricoes.Add(temp);

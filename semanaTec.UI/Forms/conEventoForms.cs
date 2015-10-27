@@ -1,5 +1,5 @@
 ﻿using semanaTec.Aplicacao;
-//using semanaTec.Repositorio;
+using semanaTec.Métodos_e_validações;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,14 +18,18 @@ namespace semanaTec.Forms
         public conEventoForms()
         {
             InitializeComponent();
-            ActiveControl = eventoCB;
+            ActiveControl = eventoCB;            
         }
-
+        eventoAplicacao appEvento;
         private void conEventoForms_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'semanaTecNomeEvento.tblEvento' table. You can move, or remove it, as needed.
-            //this.tblEventoTableAdapter.Fill(this.semanaTecNomeEvento.tblEvento);
-
+        {            
+            appEvento = new eventoAplicacao();
+            appEvento.selectEventos();
+            foreach (var evento in appEvento.selectEventos())
+            {
+                eventoCB.Items.Add(evento.Nome);
+            }
+            eventoCB.SelectedIndex = -1;
         }
 
         private void eventoCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -34,20 +38,9 @@ namespace semanaTec.Forms
             {
                 if(eventoCB.Text != "")
                 {
-                    //DataTable dtInfoEventos = infoevento.BuscaX(id);
-                    //Contexto contexto = new Contexto();
-                    eventoAplicacao appEvento = new eventoAplicacao();
-                   // appEvento.selectEventos(select);
-                    SqlConnection conn = new SqlConnection(@"data source=.\SQLEXPRESS; Integrated Security = SSPI; Initial Catalog=semanaTec");
-                    conn.Open();
-                    string select = string.Format("SELECT * FROM tblEvento WHERE sNome = '{0}'", eventoCB.Text);
-                    SqlDataAdapter data = new SqlDataAdapter(select, conn);
-                    DataTable dt = new DataTable();
-                    data.Fill(dt);
-                    eventoGV.DataSource = dt;
-                    conn.Close();
-                }
-                
+                    vinculaObjeto bind = new vinculaObjeto();
+                    eventoGV.DataSource = bind.vincula(eventoCB.SelectedItem.ToString());
+                }                
             }
             catch(Exception ex)
             {

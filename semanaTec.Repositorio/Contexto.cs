@@ -14,11 +14,13 @@ namespace semanaTec.Repositorio
         public readonly SqlConnection minhaConexao; // Declaração da conexão com o DB
         public Contexto()
         {
-            minhaConexao = new SqlConnection(@"data source=.\SQLEXPRESS; Integrated Security = SSPI; Initial Catalog=semanaTec");
+            minhaConexao = new SqlConnection(ConfigurationManager.ConnectionStrings["semanaTecConfig"].ConnectionString);
             minhaConexao.Open();
         }
-        public void executaComando(string strCommand) //Execução de comandos sem retorno (INSERT, UPDATE, DELETE)
+        public void executaComando(string strCommand) //Execução de comandos SQL sem retorno (INSERT, UPDATE, DELETE)
         {
+            if(minhaConexao.State == ConnectionState.Closed)
+                minhaConexao.Open();
             var cmdComando = new SqlCommand
             {
                 CommandText = strCommand,
@@ -27,17 +29,17 @@ namespace semanaTec.Repositorio
             };
             cmdComando.ExecuteNonQuery();
         }
-        public SqlDataReader executaComandoRetorno(string strCommand) //Execução de comandos com retorno (SELECT)
+        public SqlDataReader executaComandoRetorno(string strCommand) //Execução de comando SQL com retorno (SELECT)
         {
+            if (minhaConexao.State == ConnectionState.Closed)
+                minhaConexao.Open();
             var cmdComando = new SqlCommand(strCommand, minhaConexao);
             return cmdComando.ExecuteReader();
         }
         public void Dispose() // Método para fechar a conexão com o banco após uma execução
         {
             if (minhaConexao.State == ConnectionState.Open)
-            {
-                minhaConexao.Close();
-            }
+                minhaConexao.Close();            
         }
     }
 }

@@ -10,8 +10,8 @@ namespace semanaTec.Dominio
     { 
         private string nome;
         private string local;
-        private string data;
-        private string hora;
+        private DateTime data;
+        private DateTime hora;
         private string tipo;
         private string descricao;
         private int codigo;
@@ -19,10 +19,10 @@ namespace semanaTec.Dominio
         private int codPales;
         private int vagas;
 
-        public Evento() 
+        /*public Evento() 
         { 
         
-        }
+        }*/
 
         public string Nome 
         {
@@ -34,12 +34,12 @@ namespace semanaTec.Dominio
             get { return local; }
             set { local = value; }
         }
-        public string Data 
+        public DateTime Data 
         {
             get { return data; }
             set { data = value; }
         }
-        public string Hora 
+        public DateTime Hora 
         {
             get { return hora; }
             set { hora = value; }

@@ -41,8 +41,8 @@ namespace semanaTec.Forms
                 var evento = new Evento();
                 evento.Nome = nomeTxt.Text;
                 evento.Local = localTxt.Text;
-                evento.Data = dataPck.Text;
-                evento.Hora = horaPck.Text;
+                evento.Data = Convert.ToDateTime(dataPck.Text);
+                evento.Hora = Convert.ToDateTime(horaPck.Text);
                 if (palestraRB.Checked)
                     evento.Tipo = palestraRB.Text;
                 else

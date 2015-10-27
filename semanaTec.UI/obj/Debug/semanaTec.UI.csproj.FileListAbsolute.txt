@@ -40,3 +40,4 @@ C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec.UI\obj
 C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.mainForm.resources
 C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.Properties.Resources.resources
 C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.UI.csproj.GenerateResource.Cache
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.Forms.loginForms.resources
