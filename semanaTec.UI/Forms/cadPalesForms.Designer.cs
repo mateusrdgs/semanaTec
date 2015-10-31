@@ -158,6 +158,8 @@
             // 
             this.titulacaoCB.FormattingEnabled = true;
             this.titulacaoCB.Items.AddRange(new object[] {
+            "Graduando",
+            "Graduado",
             "Especialista",
             "Mestre",
             "Doutor",

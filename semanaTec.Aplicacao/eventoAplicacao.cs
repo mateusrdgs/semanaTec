@@ -19,7 +19,7 @@ namespace semanaTec.Aplicacao
             strInsert += @"INSERT INTO tblEvento (sNome, sLocal, dData, 
             hHora, sTipo, nDuracao, sDescricao, nCodPales, nVagas)";
             strInsert += string.Format(@" VALUES ('{0}', '{1}','{2}',
-            '{3}', '{4}','{5}','{6}','{7}','{8}')",
+            '{3}','{4}','{5}','{6}','{7}','{8}')",
             evento.Nome, evento.Local, evento.Data, evento.Hora, evento.Tipo,
             evento.Duracao, evento.Descricao, evento.CodPal, evento.Vagas);
             using (contexto = new Contexto())
@@ -44,7 +44,7 @@ namespace semanaTec.Aplicacao
         }
         public void salvaEvento(Evento evento)
         {
-             if(evento.Codigo > 0)
+            if (evento.Codigo > 0)
             {
                 atualizaEvento(evento);
             }
@@ -64,7 +64,7 @@ namespace semanaTec.Aplicacao
         {
             var strSelect = "SELECT * FROM tblEvento";
             using (contexto = new Contexto())
-            {                
+            {
                 SqlDataReader retornoDataReader = contexto.executaComandoRetorno(strSelect);
                 return eventoReaderToObjectList(retornoDataReader);
             }
@@ -84,7 +84,6 @@ namespace semanaTec.Aplicacao
             var eventos = new List<Evento>();
             try
             {
-                
                 while (reader.Read())
                 {
                     var temp = new Evento()
@@ -104,7 +103,7 @@ namespace semanaTec.Aplicacao
                 }
                 reader.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 int a;
             }

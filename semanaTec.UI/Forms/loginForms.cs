@@ -16,7 +16,7 @@ namespace semanaTec.Forms
         {
             InitializeComponent();
         }
-
+       
         private void newUserLbl_MouseHover(object sender, EventArgs e)
         {
             Cursor = Cursors.Hand;            
@@ -25,6 +25,15 @@ namespace semanaTec.Forms
         private void newUserLbl_MouseLeave(object sender, EventArgs e)
         {
             Cursor = Cursors.Arrow;
+        }
+
+        private void newUserLbl_Click(object sender, EventArgs e)
+        {
+            cadPartForms novoCadastro = new cadPartForms();
+            novoCadastro.Show();
+        }
+        private void loginForms_Load(object sender, EventArgs e)
+        {
         }
     }
 }

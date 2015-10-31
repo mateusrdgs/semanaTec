@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.palestraCB = new System.Windows.Forms.ComboBox();
+            this.eventoCB = new System.Windows.Forms.ComboBox();
             this.cpfMsk = new System.Windows.Forms.MaskedTextBox();
             this.dataPck = new System.Windows.Forms.DateTimePicker();
             this.limparBtn = new System.Windows.Forms.Button();
@@ -71,14 +70,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Data";
             // 
-            // palestraCB
+            // eventoCB
             // 
-            this.palestraCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.palestraCB.FormattingEnabled = true;
-            this.palestraCB.Location = new System.Drawing.Point(79, 21);
-            this.palestraCB.Name = "palestraCB";
-            this.palestraCB.Size = new System.Drawing.Size(187, 28);
-            this.palestraCB.TabIndex = 1;
+            this.eventoCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventoCB.FormattingEnabled = true;
+            this.eventoCB.Location = new System.Drawing.Point(79, 21);
+            this.eventoCB.Name = "eventoCB";
+            this.eventoCB.Size = new System.Drawing.Size(187, 28);
+            this.eventoCB.TabIndex = 1;
             // 
             // cpfMsk
             // 
@@ -122,7 +121,7 @@
             // inscricaoEvento
             // 
             this.inscricaoEvento.Controls.Add(this.label1);
-            this.inscricaoEvento.Controls.Add(this.palestraCB);
+            this.inscricaoEvento.Controls.Add(this.eventoCB);
             this.inscricaoEvento.Controls.Add(this.cpfMsk);
             this.inscricaoEvento.Controls.Add(this.dataPck);
             this.inscricaoEvento.Controls.Add(this.label2);
@@ -133,7 +132,7 @@
             this.inscricaoEvento.Size = new System.Drawing.Size(503, 161);
             this.inscricaoEvento.TabIndex = 8;
             this.inscricaoEvento.TabStop = false;
-            this.inscricaoEvento.Text = "Inscrição de evento";            
+            this.inscricaoEvento.Text = "Inscrição de evento";
             // 
             // cadInscForms
             // 
@@ -144,7 +143,7 @@
             this.Controls.Add(this.salvarBtn);
             this.Controls.Add(this.limparBtn);
             this.Name = "cadInscForms";
-            this.Text = "cadInscForms";
+            this.Load += new System.EventHandler(this.cadInscForms_Load);
             this.inscricaoEvento.ResumeLayout(false);
             this.inscricaoEvento.PerformLayout();
             this.ResumeLayout(false);
@@ -156,7 +155,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox palestraCB;
+        private System.Windows.Forms.ComboBox eventoCB;
         private System.Windows.Forms.MaskedTextBox cpfMsk;
         private System.Windows.Forms.DateTimePicker dataPck;
         private System.Windows.Forms.Button limparBtn;

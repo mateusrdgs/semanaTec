@@ -40,7 +40,7 @@
             // 
             this.eventoLbl.AutoSize = true;
             this.eventoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventoLbl.Location = new System.Drawing.Point(149, 59);
+            this.eventoLbl.Location = new System.Drawing.Point(45, 41);
             this.eventoLbl.Name = "eventoLbl";
             this.eventoLbl.Size = new System.Drawing.Size(59, 20);
             this.eventoLbl.TabIndex = 0;
@@ -53,9 +53,9 @@
             this.eventoCB.DisplayMember = "sNome";
             this.eventoCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventoCB.FormattingEnabled = true;
-            this.eventoCB.Location = new System.Drawing.Point(214, 51);
+            this.eventoCB.Location = new System.Drawing.Point(110, 38);
             this.eventoCB.Name = "eventoCB";
-            this.eventoCB.Size = new System.Drawing.Size(289, 28);
+            this.eventoCB.Size = new System.Drawing.Size(524, 28);
             this.eventoCB.TabIndex = 1;
             this.eventoCB.ValueMember = "sNome";
             this.eventoCB.SelectedIndexChanged += new System.EventHandler(this.eventoCB_SelectedIndexChanged);
@@ -78,10 +78,10 @@
             this.eventoGV.AllowUserToAddRows = false;
             this.eventoGV.AllowUserToDeleteRows = false;
             this.eventoGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventoGV.Location = new System.Drawing.Point(6, 137);
+            this.eventoGV.Location = new System.Drawing.Point(6, 85);
             this.eventoGV.Name = "eventoGV";
             this.eventoGV.ReadOnly = true;
-            this.eventoGV.Size = new System.Drawing.Size(666, 267);
+            this.eventoGV.Size = new System.Drawing.Size(666, 319);
             this.eventoGV.TabIndex = 2;
             // 
             // conEventoForms

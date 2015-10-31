@@ -16,10 +16,10 @@ namespace semanaTec.Dominio
         private string email;
         private int codigo;
 
-        public Palestrante() 
+        /*public Palestrante() 
         {
         
-        }
+        }*/
 
         public string Nome 
         {

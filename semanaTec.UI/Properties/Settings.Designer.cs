@@ -22,5 +22,17 @@ namespace semanaTec.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Perfil {
+            get {
+                return ((string)(this["Perfil"]));
+            }
+            set {
+                this["Perfil"] = value;
+            }
+        }
     }
 }

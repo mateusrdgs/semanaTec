@@ -69,6 +69,39 @@ namespace semanaTec.Aplicacao
                 return participanteReaderToObjectList(retornoDataReader);
             }
         }
+        public Participantes selectParticipantesWhere(string CPF)
+        {
+            var strSelect = string.Format(@"SELECT * FROM tblParticipante
+            WHERE sCPF = '{0}'", CPF);
+            using (contexto = new Contexto())
+            {
+                var retornoDataReader = contexto.executaComandoRetorno(strSelect);
+                return participanteReaderToObject(retornoDataReader);
+            }
+        }
+        public Participantes participanteReaderToObject(SqlDataReader reader)
+        {
+            var participantes = new Participantes();
+            while (reader.Read())
+            {
+                var temp = new Participantes()
+                {
+                    Cpf = (reader["sCPF"].ToString()),
+                    Nome = (reader["sNome"].ToString()),
+                    Curso = (reader["sCurso"].ToString()),
+                    Periodo = int.Parse(reader["nPeriodo"].ToString()),
+                    Telefone = (reader["sTelefone"].ToString()),
+                    Email = (reader["sEmail"].ToString()),
+                    Login = (reader["sLogin"].ToString()),
+                    Senha = (reader["sSenha"].ToString()),
+                    Perfil = (reader["sPerfil"].ToString()),
+                };
+                participantes = temp;
+            }
+            reader.Close();
+            return participantes;
+        }
+
         public List<Participantes> participanteReaderToObjectList(SqlDataReader reader)
         {
             var participantes = new List<Participantes>();

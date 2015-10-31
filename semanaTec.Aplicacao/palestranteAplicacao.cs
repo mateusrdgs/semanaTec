@@ -18,7 +18,7 @@ namespace semanaTec.Aplicacao
             var strInsert = "";
             strInsert += @"INSERT INTO tblPalestrante (sNome, sTitulacao,
             sMiniCurriculum, sCidade, sTelefone, sEmail)";
-            strInsert += string.Format(@"VALUES ('{0}', '{1}', '{2}'
+            strInsert += string.Format(@"VALUES ('{0}', '{1}', '{2}',
             '{3}', '{4}', '{5}')", palestrante.Nome, palestrante.Titulacao,
             palestrante.MiniCurriculum, palestrante.Cidade, palestrante.Telefone,
             palestrante.Email);
@@ -40,7 +40,7 @@ namespace semanaTec.Aplicacao
         }
         public void salvaPalestrante(Palestrante palestrante)
         {
-            if (palestrante.Codigo == Convert.ToInt32(selectPalestrante().Where(x => x.Codigo == palestrante.Codigo)))
+            if (selectPalestrante().Count(x => x.Codigo == palestrante.Codigo) > 0)
             {
                 atualizaPalestrante(palestrante);
             }
