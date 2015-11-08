@@ -279,7 +279,7 @@
             // limparBtn
             // 
             this.limparBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.limparBtn.Location = new System.Drawing.Point(123, 377);
+            this.limparBtn.Location = new System.Drawing.Point(148, 377);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(75, 30);
             this.limparBtn.TabIndex = 12;

@@ -1,6 +1,6 @@
 ﻿namespace semanaTec.Forms
 {
-    partial class conInscForms
+    partial class conInscEvForms
     {
         /// <summary>
         /// Required designer variable.
@@ -57,16 +57,18 @@
             this.buscarBtn.Name = "buscarBtn";
             this.buscarBtn.Size = new System.Drawing.Size(75, 30);
             this.buscarBtn.TabIndex = 2;
+            this.buscarBtn.Tag = "Buscar";
             this.buscarBtn.Text = "Buscar";
             this.buscarBtn.UseVisualStyleBackColor = true;
             // 
             // inscGV
             // 
             this.inscGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inscGV.Location = new System.Drawing.Point(6, 154);
+            this.inscGV.Location = new System.Drawing.Point(6, 148);
             this.inscGV.Name = "inscGV";
-            this.inscGV.Size = new System.Drawing.Size(498, 130);
+            this.inscGV.Size = new System.Drawing.Size(498, 138);
             this.inscGV.TabIndex = 2;
+            this.inscGV.Tag = "Informações";
             // 
             // cpfMsk
             // 
@@ -75,6 +77,7 @@
             this.cpfMsk.Name = "cpfMsk";
             this.cpfMsk.Size = new System.Drawing.Size(119, 26);
             this.cpfMsk.TabIndex = 1;
+            this.cpfMsk.Tag = "CPF";
             // 
             // cpfLbl
             // 
@@ -85,13 +88,13 @@
             this.cpfLbl.TabIndex = 0;
             this.cpfLbl.Text = "CPF";
             // 
-            // conInscForms
+            // conInscEvForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 412);
             this.Controls.Add(this.groupBox1);
-            this.Name = "conInscForms";
+            this.Name = "conInscEvForms";
             this.Text = "conInscForms";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

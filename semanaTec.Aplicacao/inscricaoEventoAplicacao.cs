@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace semanaTec.Aplicacao
 {
-    public class inscricaoAplicacao
+    public class inscricaoEventoAplicacao
     {
         private Contexto contexto;
 
-        private void insereInscricao(Inscricao inscricao)
+        private void insereInscricao(inscricaoEvento inscricao)
         {
             var strInsert = "";
             strInsert += @"INSERT INTO tblInscricao (sCPF, dData, nCodEv)";
@@ -24,9 +24,8 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strInsert);
             }
         }
-        private void atualizaInscricao(Inscricao inscricao)
+        private void atualizaInscricao(inscricaoEvento inscricao)
         {
-
             var strUpdate = "";
             strUpdate += @"UPDATE tblInscricao SET ";
             strUpdate += string.Format(@"sCPF = '{0}', 
@@ -37,7 +36,7 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strUpdate);
             }
         }
-        public void salvar(Inscricao inscricao)
+        public void salvar(inscricaoEvento inscricao)
         {
             if (listaInscricoes().Count(x => x.Codigo == inscricao.Codigo) > 0)
             {
@@ -57,7 +56,7 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strDelete);
             }
         }
-        public List<Inscricao> listaInscricoes()
+        public List<inscricaoEvento> listaInscricoes()
         {
             var strSelect = "SELECT * FROM tblInscricao";
             using (contexto = new Contexto())
@@ -66,12 +65,12 @@ namespace semanaTec.Aplicacao
                 return inscricaoReaderToObjectList(retornoDataReader);
             }
         }
-        private List<Inscricao> inscricaoReaderToObjectList(SqlDataReader reader)
+        private List<inscricaoEvento> inscricaoReaderToObjectList(SqlDataReader reader)
         {
-            var inscricoes = new List<Inscricao>();
+            var inscricoes = new List<inscricaoEvento>();
             while (reader.Read())
             {
-                var temp = new Inscricao()
+                var temp = new inscricaoEvento()
                 {
                     Codigo = int.Parse(reader["nCodInsc"].ToString()),
                     Cpf = (reader["sCPF"].ToString()),

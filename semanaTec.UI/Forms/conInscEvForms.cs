@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace semanaTec.Forms
 {
-    public partial class conInscForms : Form
+    public partial class conInscEvForms : Form
     {
-        public conInscForms()
+        public conInscEvForms()
         {
             InitializeComponent();
             ActiveControl = cpfMsk;

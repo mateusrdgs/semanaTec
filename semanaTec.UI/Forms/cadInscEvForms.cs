@@ -1,5 +1,6 @@
 ﻿using semanaTec.Aplicacao;
 using semanaTec.Dominio;
+using semanaTec.Metodos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,17 +13,17 @@ using System.Windows.Forms;
 
 namespace semanaTec.Forms
 {
-    public partial class cadInscForms : Form
+    public partial class cadInscEvForms : Form
     {
-        public cadInscForms()
+        public cadInscEvForms()
         {
             InitializeComponent();
             ActiveControl = eventoCB;
         }
         eventoAplicacao appEvento;
-        inscricaoAplicacao appInsc;
+        inscricaoEventoAplicacao appInsc;
         participanteAplicacao appPart;
-        Inscricao inscricao;
+        inscricaoEvento inscricao;
 
         private void cadInscForms_Load(object sender, EventArgs e)
         {
@@ -38,23 +39,23 @@ namespace semanaTec.Forms
         private void salvarBtn_Click(object sender, EventArgs e)
         {
             cpfMsk.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            isEmpty validaControles = new isEmpty();
             try
             {
-                foreach (Control child in inscricaoEvento.Controls)
+                foreach (Control child in this.Controls)
                 {
-                    if (child is MaskedTextBox && string.IsNullOrEmpty(child.Text))
+                    string tag = validaControles.empty(child);
+                    if (tag != "")
                     {
-                        throw new Exception();
+                        throw new Exception("O campo " + "'" + tag + "'" + " está vazio");
                     }
-                    else if (child is ComboBox && ((ComboBox)child).SelectedIndex < 0)
-                    {
-                        throw new Exception();
-                    }
+                    else
+                    { }
                 }
 
-                appInsc = new inscricaoAplicacao();
+                appInsc = new inscricaoEventoAplicacao();
                 appPart = new participanteAplicacao();
-                inscricao = new Inscricao();
+                inscricao = new inscricaoEvento();
 
                 if (appPart.selectParticipantesWhere(cpfMsk.Text).Cpf == cpfMsk.Text)
                 {

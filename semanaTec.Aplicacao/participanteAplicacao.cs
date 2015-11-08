@@ -16,13 +16,13 @@ namespace semanaTec.Aplicacao
         private void insereParticipante(Participantes participante)
         {
             var strInsert = "";
-            strInsert += @"INSERT INTO tblParticipante (sCPF, sNome, sCurso, 
-            nPeriodo, sTelefone, sEmail, sLogin, sSenha, sPerfil)";
-            strInsert += string.Format(@" VALUES ('{0}', '{1}', '{2}', {3}, 
-            '{4}', '{5}', '{6}', '{7}', '{8}')", 
-            participante.Cpf, participante.Nome, participante.Curso, 
-            participante.Periodo, participante.Telefone, participante.Email, 
-            participante.Login, participante.Senha, participante.Perfil);
+            strInsert += string.Format(@"INSERT INTO tblParticipante
+            (sCPF, sNome, sEmail, sTelefone, sLogin, sSenha, sPerfil, 
+            nPeriodo, sCurso) VALUES ('{0}', '{1}', '{2}', {3}, '{4}', 
+            '{5}', '{6}', '{7}', '{8}')", participante.Cpf, participante.Nome, 
+            participante.Email, participante.Telefone, participante.Login, 
+            participante.Senha, participante.Perfil, participante.Periodo, 
+            participante.Curso);
             using (contexto = new Contexto())
             {
                 contexto.executaComando(strInsert);
@@ -31,20 +31,20 @@ namespace semanaTec.Aplicacao
         private void atualizaParticipante(Participantes participante)
         {
             var strUpdate = "";
-            strUpdate += @"UPDATE tblParticipante SET";
-            strUpdate += string.Format(@"sCPF = '{0}', sNome = '{1}', sCurso = '{2},
-            nPeriodo = '{3}', sTelefone = '{4}, sEmail = '{5}', sLogin = '{6}', 
-            sSenha = {7}, sPerfil = '{8}')", participante.Cpf, participante.Nome, 
-            participante.Curso, participante.Periodo, participante.Telefone, 
-            participante.Email, participante.Login, participante.Senha, participante.Perfil);
+            strUpdate += string.Format(@"UPDATE tblParticipante SET 
+            (sCPF, sNome, sEmail, sTelefone, sLogin, sSenha, sPerfil, 
+            nPeriodo, sCurso) VALUES ('{0}', '{1}', '{2}', {3}, '{4}', 
+            '{5}', '{6}', '{7}', '{8}')", participante.Cpf, participante.Nome,
+            participante.Email, participante.Telefone, participante.Login,
+            participante.Senha, participante.Perfil, participante.Periodo,
+            participante.Curso);
             using (contexto = new Contexto())
             {
                 contexto.executaComando(strUpdate);
             }
         }
         public void salvaParticipante(Participantes participante)
-        {
-            
+        {            
             if(participante.Cpf == (selectParticipantes().Where(x=>x.Cpf == participante.Cpf)).ToString())
             {
                 atualizaParticipante(participante);
@@ -88,20 +88,19 @@ namespace semanaTec.Aplicacao
                 {
                     Cpf = (reader["sCPF"].ToString()),
                     Nome = (reader["sNome"].ToString()),
-                    Curso = (reader["sCurso"].ToString()),
-                    Periodo = int.Parse(reader["nPeriodo"].ToString()),
-                    Telefone = (reader["sTelefone"].ToString()),
                     Email = (reader["sEmail"].ToString()),
+                    Telefone = (reader["sTelefone"].ToString()),
                     Login = (reader["sLogin"].ToString()),
                     Senha = (reader["sSenha"].ToString()),
                     Perfil = (reader["sPerfil"].ToString()),
+                    Periodo = int.Parse(reader["nPeriodo"].ToString()),
+                    Curso = (reader["sCurso"].ToString()),
                 };
                 participantes = temp;
             }
             reader.Close();
             return participantes;
         }
-
         public List<Participantes> participanteReaderToObjectList(SqlDataReader reader)
         {
             var participantes = new List<Participantes>();

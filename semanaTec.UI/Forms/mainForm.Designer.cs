@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainMenu = new System.Windows.Forms.MenuStrip();
+            this.inscriçãoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.seminfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eventosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscriçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.participanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,19 +44,32 @@
             this.palestranteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.participaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscriçãoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mainMenu
+            // inscriçãoToolStripMenuItem3
             // 
-            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarToolStripMenuItem,
-            this.consultarToolStripMenuItem,
-            this.editarToolStripMenuItem});
-            this.mainMenu.Location = new System.Drawing.Point(0, 0);
-            this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(784, 29);
-            this.mainMenu.TabIndex = 0;
+            this.inscriçãoToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seminfoToolStripMenuItem,
+            this.eventosToolStripMenuItem});
+            this.inscriçãoToolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inscriçãoToolStripMenuItem3.Name = "inscriçãoToolStripMenuItem3";
+            this.inscriçãoToolStripMenuItem3.Size = new System.Drawing.Size(83, 25);
+            this.inscriçãoToolStripMenuItem3.Text = "Inscrição";
+            // 
+            // seminfoToolStripMenuItem
+            // 
+            this.seminfoToolStripMenuItem.Name = "seminfoToolStripMenuItem";
+            this.seminfoToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.seminfoToolStripMenuItem.Text = "Seminfo";
+            // 
+            // eventosToolStripMenuItem
+            // 
+            this.eventosToolStripMenuItem.Name = "eventosToolStripMenuItem";
+            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.eventosToolStripMenuItem.Text = "Eventos";
             // 
             // cadastrarToolStripMenuItem
             // 
@@ -110,14 +125,14 @@
             // eventoToolStripMenuItem1
             // 
             this.eventoToolStripMenuItem1.Name = "eventoToolStripMenuItem1";
-            this.eventoToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
+            this.eventoToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
             this.eventoToolStripMenuItem1.Text = "Evento";
             this.eventoToolStripMenuItem1.Click += new System.EventHandler(this.eventoToolStripMenuItem1_Click);
             // 
             // inscriçãoToolStripMenuItem1
             // 
             this.inscriçãoToolStripMenuItem1.Name = "inscriçãoToolStripMenuItem1";
-            this.inscriçãoToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
+            this.inscriçãoToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
             this.inscriçãoToolStripMenuItem1.Text = "Inscrição";
             this.inscriçãoToolStripMenuItem1.Click += new System.EventHandler(this.inscriçãoToolStripMenuItem1_Click);
             // 
@@ -157,6 +172,27 @@
             this.inscriçãoToolStripMenuItem2.Size = new System.Drawing.Size(164, 26);
             this.inscriçãoToolStripMenuItem2.Text = "Inscrição";
             // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(66, 25);
+            this.logoutToolStripMenuItem.Text = "LOGOUT";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // mainMenu
+            // 
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inscriçãoToolStripMenuItem3,
+            this.cadastrarToolStripMenuItem,
+            this.consultarToolStripMenuItem,
+            this.editarToolStripMenuItem,
+            this.logoutToolStripMenuItem});
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(784, 29);
+            this.mainMenu.TabIndex = 0;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,12 +215,14 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip mainMenu;
+        private System.Windows.Forms.ToolStripMenuItem inscriçãoToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem seminfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eventosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem palestranteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem participanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscriçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem participanteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem palestranteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem inscriçãoToolStripMenuItem1;
@@ -193,6 +231,9 @@
         private System.Windows.Forms.ToolStripMenuItem palestranteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem participaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inscriçãoToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip mainMenu;
+
     }
 }
 

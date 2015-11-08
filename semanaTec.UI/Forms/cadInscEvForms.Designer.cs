@@ -1,6 +1,6 @@
 ﻿namespace semanaTec.Forms
 {
-    partial class cadInscForms
+    partial class cadInscEvForms
     {
         /// <summary>
         /// Required designer variable.
@@ -78,6 +78,7 @@
             this.eventoCB.Name = "eventoCB";
             this.eventoCB.Size = new System.Drawing.Size(187, 28);
             this.eventoCB.TabIndex = 1;
+            this.eventoCB.Tag = "Palestra";
             // 
             // cpfMsk
             // 
@@ -87,6 +88,7 @@
             this.cpfMsk.Name = "cpfMsk";
             this.cpfMsk.Size = new System.Drawing.Size(121, 26);
             this.cpfMsk.TabIndex = 2;
+            this.cpfMsk.Tag = "CPF";
             // 
             // dataPck
             // 
@@ -96,11 +98,12 @@
             this.dataPck.Name = "dataPck";
             this.dataPck.Size = new System.Drawing.Size(100, 26);
             this.dataPck.TabIndex = 3;
+            this.dataPck.Tag = "Data";
             // 
             // limparBtn
             // 
             this.limparBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.limparBtn.Location = new System.Drawing.Point(137, 199);
+            this.limparBtn.Location = new System.Drawing.Point(158, 199);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(75, 30);
             this.limparBtn.TabIndex = 5;
@@ -110,7 +113,7 @@
             // salvarBtn
             // 
             this.salvarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvarBtn.Location = new System.Drawing.Point(300, 199);
+            this.salvarBtn.Location = new System.Drawing.Point(285, 199);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(75, 30);
             this.salvarBtn.TabIndex = 4;
@@ -134,7 +137,7 @@
             this.inscricaoEvento.TabStop = false;
             this.inscricaoEvento.Text = "Inscrição de evento";
             // 
-            // cadInscForms
+            // cadInscEvForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +145,7 @@
             this.Controls.Add(this.inscricaoEvento);
             this.Controls.Add(this.salvarBtn);
             this.Controls.Add(this.limparBtn);
-            this.Name = "cadInscForms";
+            this.Name = "cadInscEvForms";
             this.Load += new System.EventHandler(this.cadInscForms_Load);
             this.inscricaoEvento.ResumeLayout(false);
             this.inscricaoEvento.PerformLayout();

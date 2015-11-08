@@ -43,6 +43,7 @@
             this.loginTxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.loginTxt.Size = new System.Drawing.Size(182, 26);
             this.loginTxt.TabIndex = 0;
+            this.loginTxt.Tag = "Login";
             // 
             // senhaTxt
             // 
@@ -52,6 +53,7 @@
             this.senhaTxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.senhaTxt.Size = new System.Drawing.Size(182, 26);
             this.senhaTxt.TabIndex = 1;
+            this.senhaTxt.Tag = "Senha";
             this.senhaTxt.UseSystemPasswordChar = true;
             // 
             // loginButton
@@ -62,8 +64,10 @@
             this.loginButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.loginButton.Size = new System.Drawing.Size(75, 30);
             this.loginButton.TabIndex = 4;
+            this.loginButton.Tag = "Logar";
             this.loginButton.Text = "LOGAR";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // newUserLbl
             // 
@@ -75,6 +79,7 @@
             this.newUserLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.newUserLbl.Size = new System.Drawing.Size(106, 15);
             this.newUserLbl.TabIndex = 5;
+            this.newUserLbl.Tag = "Criar novo usuário";
             this.newUserLbl.Text = "Criar novo usuário";
             this.newUserLbl.Click += new System.EventHandler(this.newUserLbl_Click);
             this.newUserLbl.MouseLeave += new System.EventHandler(this.newUserLbl_MouseLeave);
@@ -84,10 +89,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(269, 87);
+            this.label1.Location = new System.Drawing.Point(275, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 16);
             this.label1.TabIndex = 6;
+            this.label1.Tag = "Entrar";
             this.label1.Text = "ENTRAR";
             // 
             // loginForms
@@ -101,8 +107,8 @@
             this.Controls.Add(this.senhaTxt);
             this.Controls.Add(this.loginTxt);
             this.Name = "loginForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "x\'";
-            this.Load += new System.EventHandler(this.loginForms_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

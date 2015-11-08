@@ -15,7 +15,6 @@ namespace semanaTec.Dominio
         private string telefone;
         private string email;
         private int codigo;
-
         /*public Palestrante() 
         {
         
@@ -56,6 +55,7 @@ namespace semanaTec.Dominio
             get { return codigo; }
             set { codigo = value; }
         }
-        
+
+        public Evento Evento;
     }
 }

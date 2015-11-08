@@ -1,5 +1,6 @@
 ﻿using semanaTec.Aplicacao;
 using semanaTec.Dominio;
+using semanaTec.Metodos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,16 +28,19 @@ namespace semanaTec.Forms
 
         private void salvarBtn_Click(object sender, EventArgs e)
         {
+            isEmpty validaControles = new isEmpty();
             try
             {
-                foreach (Control child in eventoInfo.Controls)
+                foreach (Control child in this.Controls)
                 {
-                    if (child is TextBox && (child.Text == null || child.Text == ""))
+                    string tag = validaControles.empty(child);
+                    if (tag != "")
                     {
-                        throw new Exception("O campo " + child.Tag + " está vazio...");
+                        throw new Exception("O campo " + "'" + tag + "'" + " está vazio");
                     }
+                    else
+                    { }
                 }
-
                 var appEvento = new eventoAplicacao();
                 var evento = new Evento();
                 evento.Nome = nomeTxt.Text;

@@ -73,7 +73,7 @@ namespace semanaTec.Aplicacao
             {
                 var temp = new Palestrante()
                 {
-                    Codigo = int.Parse(reader["nCodPales"].ToString()),
+                    Codigo = int.Parse(reader["nCodPal"].ToString()),
                     Nome = (reader["sNome"].ToString()),
                     Titulacao = (reader["sTitulacao"].ToString()),
                     MiniCurriculum = (reader["sMiniCurriculum"].ToString()),

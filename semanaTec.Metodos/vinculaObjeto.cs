@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace semanaTec.Métodos_e_validações
+namespace semanaTec.Metodos
 {
     public class vinculaObjeto
     {
@@ -14,7 +14,7 @@ namespace semanaTec.Métodos_e_validações
         {
             eventoAplicacao evento = new eventoAplicacao();
             BindingSource novoEvento = new BindingSource();
-            novoEvento.Add(evento.selectEventoWhere(itemCB));
+            novoEvento.Add(evento.selectDTWhere(itemCB));
             return novoEvento;
         }
     }

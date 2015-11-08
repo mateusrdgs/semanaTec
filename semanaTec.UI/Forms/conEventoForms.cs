@@ -1,5 +1,5 @@
 ﻿using semanaTec.Aplicacao;
-using semanaTec.Métodos_e_validações;
+using semanaTec.Metodos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +18,11 @@ namespace semanaTec.Forms
         public conEventoForms()
         {
             InitializeComponent();
-            ActiveControl = eventoCB;            
+            ActiveControl = eventoCB;
         }
         eventoAplicacao appEvento;
         private void conEventoForms_Load(object sender, EventArgs e)
-        {            
+        {
             appEvento = new eventoAplicacao();
             appEvento.selectEventos();
             foreach (var evento in appEvento.selectEventos())
@@ -36,13 +36,13 @@ namespace semanaTec.Forms
         {
             try
             {
-                if(eventoCB.Text != "")
+                if (eventoCB.Text != "")
                 {
-                    vinculaObjeto bind = new vinculaObjeto();
-                    eventoGV.DataSource = bind.vincula(eventoCB.SelectedItem.ToString());
-                }                
+                    appEvento = new eventoAplicacao();
+                    eventoGV.DataSource = appEvento.selectDTWhere(eventoCB.Text);
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

@@ -2,6 +2,7 @@
 using semanaTec.Repositorio;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace semanaTec.Aplicacao
         {
             var strInsert = "";
             strInsert += @"INSERT INTO tblEvento (sNome, sLocal, dData, 
-            hHora, sTipo, nDuracao, sDescricao, nCodPales, nVagas)";
+            hHora, sTipo, nDuracao, sDescricao, nCodPal, nVagas)";
             strInsert += string.Format(@" VALUES ('{0}', '{1}','{2}',
             '{3}','{4}','{5}','{6}','{7}','{8}')",
             evento.Nome, evento.Local, evento.Data, evento.Hora, evento.Tipo,
@@ -79,40 +80,21 @@ namespace semanaTec.Aplicacao
                 return eventoReaderToObject(retornoDataReader);
             }
         }
+        public DataTable selectDTWhere(string nome)
+        {
+            var strSelectWhere = string.Format(@"SELECT ev.nCodEv, ev.sNome, ev.dData, 
+            ev.hHora, ev.sLocal, pl.nCodPal, pl.sNome FROM tblPalestrante pl 
+            INNER JOIN tblEvento ev ON pl.nCodPal = ev.nCodPal
+            WHERE ev.sNome = '{0}'", nome);
+            using (contexto = new Contexto())
+            {
+                var retornoDataReader = contexto.executaComandoRetorno(strSelectWhere);
+                return eventoReaderToDT(retornoDataReader);
+            }
+        }
         public List<Evento> eventoReaderToObjectList(SqlDataReader reader)
         {
             var eventos = new List<Evento>();
-            try
-            {
-                while (reader.Read())
-                {
-                    var temp = new Evento()
-                    {
-                        Codigo = int.Parse(reader["nCodEv"].ToString()),
-                        Nome = reader["sNome"].ToString(),
-                        Local = reader["sLocal"].ToString(),
-                        Data = DateTime.Parse(reader["dData"].ToString()),
-                        Hora = DateTime.Parse(reader["hHora"].ToString()),
-                        Tipo = reader["sTipo"].ToString(),
-                        Duracao = int.Parse(reader["nDuracao"].ToString()),
-                        Descricao = reader["sDescricao"].ToString(),
-                        CodPal = int.Parse(reader["nCodPales"].ToString()),
-                        Vagas = int.Parse(reader["nVagas"].ToString())
-                    };
-                    eventos.Add(temp);
-                }
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                int a;
-            }
-            return eventos;
-        }
-
-        public Evento eventoReaderToObject(SqlDataReader reader)
-        {
-            var evento = new Evento();
             while (reader.Read())
             {
                 var temp = new Evento()
@@ -125,8 +107,58 @@ namespace semanaTec.Aplicacao
                     Tipo = reader["sTipo"].ToString(),
                     Duracao = int.Parse(reader["nDuracao"].ToString()),
                     Descricao = reader["sDescricao"].ToString(),
-                    CodPal = int.Parse(reader["nCodPales"].ToString()),
-                    Vagas = int.Parse(reader["nVagas"].ToString())
+                    Vagas = int.Parse(reader["nVagas"].ToString()),
+                    CodPal = int.Parse(reader["nCodPal"].ToString())
+                };
+                eventos.Add(temp);
+            }
+            reader.Close();
+
+            return eventos;
+        }
+        public DataTable eventoReaderToDT(SqlDataReader reader)
+        {
+            DataTable tbEsquema = reader.GetSchemaTable();
+            DataTable tbRetorno = new DataTable();
+            foreach (DataRow r in tbEsquema.Rows)
+            {
+                if (!tbRetorno.Columns.Contains(r["ColumnName"].ToString()))
+                {
+                    DataColumn col = new DataColumn()
+                    {
+                        ColumnName = r["ColumnName"].ToString(),
+                        Unique = Convert.ToBoolean(r["IsUnique"]),
+                        AllowDBNull = Convert.ToBoolean(r["AllowDBNull"]),
+                        ReadOnly = Convert.ToBoolean(r["IsReadOnly"])
+                    };
+                    tbRetorno.Columns.Add(col);
+                }
+            }
+            while (reader.Read())
+            {
+                DataRow novaLinha = tbRetorno.NewRow();
+                for (int i = 0; i < tbRetorno.Columns.Count; i++)
+                {
+                    novaLinha[i] = reader.GetValue(i);
+                }
+                tbRetorno.Rows.Add(novaLinha);
+            }
+            return tbRetorno;
+        }
+
+        public Evento eventoReaderToObject(SqlDataReader reader)
+        {
+            var evento = new Evento();
+            while (reader.Read())
+            {
+                var temp = new Evento
+                {
+                    Codigo = int.Parse(reader["nCodEv"].ToString()),
+                    Nome = reader["sNome"].ToString(),
+                    Data = DateTime.Parse(reader["dData"].ToString()),
+                    Hora = DateTime.Parse(reader["hHora"].ToString()),
+                    Local = reader["sLocal"].ToString(),
+                    CodPal = int.Parse(reader["nCodPal"].ToString()),
                 };
                 evento = temp;
             }

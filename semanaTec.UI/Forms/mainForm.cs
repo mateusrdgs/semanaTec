@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,14 +23,15 @@ namespace semanaTec
         cadEventoForms cadEventoForm;
         cadPalesForms cadPalesForm;
         cadPartForms cadPartForm;
-        cadInscForms cadInscForm;
+        cadInscEvForms cadInscForm;
         conEventoForms conEventoForm;
-        conInscForms conInscForm;
+        conInscEvForms conInscForm;
         Evento evento = new Evento();
-        Inscricao insc = new Inscricao();        
+        inscricaoEvento insc = new inscricaoEvento();        
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show("Bem vindo Mateus", "Mateus", MessageBoxButtons.OK);
             MaximizeBox = false;
         }
 
@@ -97,7 +99,7 @@ namespace semanaTec
 
             if (cadInscForm == null || cadInscForm.IsDisposed)
             {
-                cadInscForm = new cadInscForms();
+                cadInscForm = new cadInscEvForms();
             }
 
             cadInscForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -133,12 +135,32 @@ namespace semanaTec
 
             if (conInscForm == null || conInscForm.IsDisposed)
             {
-                conInscForm = new conInscForms();
+                conInscForm = new conInscEvForms();
             }
 
             conInscForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             conInscForm.MdiParent = this;
             conInscForm.Show();  
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Deseja realmente efetuar o logout?", "Confirmar logout", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Thread th;
+                MessageBox.Show("Logout efetuado com sucesso");
+                this.Close();
+                th = new Thread(openNewForm);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+            }
+            else { }
+            
+        }
+
+        private void openNewForm(object obj)
+        {
+            Application.Run(new loginForms());
         }
     }
 }
