@@ -27,7 +27,9 @@ namespace semanaTec
         conEventoForms conEventoForm;
         conInscEvForms conInscForm;
         Evento evento = new Evento();
-        inscricaoEvento insc = new inscricaoEvento();        
+        inscricaoEvento insc = new inscricaoEvento();
+        cadInscSemForms cadInscSemForm;
+        cadInscEvForms cadInscEvForm;
 
         private void mainForm_Load(object sender, EventArgs e)
         {
@@ -158,9 +160,45 @@ namespace semanaTec
             
         }
 
+        private void seminfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            cadInscSemForm = null;
+
+            if (cadInscSemForm == null || cadInscSemForm.IsDisposed)
+            {
+                cadInscSemForm = new cadInscSemForms();
+            }
+
+            cadInscSemForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            cadInscSemForm.MdiParent = this;
+            cadInscSemForm.Show();  
+        }
+
         private void openNewForm(object obj)
         {
             Application.Run(new loginForms());
+        }
+
+        private void eventosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            cadInscEvForm = null;
+
+            if (cadInscEvForm == null || cadInscEvForm.IsDisposed)
+            {
+                cadInscEvForm = new cadInscEvForms();
+            }
+
+            cadInscEvForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            cadInscEvForm.MdiParent = this;
+            cadInscEvForm.Show();  
         }
     }
 }

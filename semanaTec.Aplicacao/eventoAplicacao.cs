@@ -14,7 +14,7 @@ namespace semanaTec.Aplicacao
     {
         private Contexto contexto;
 
-        public void insereEvento(Evento evento)
+        public void insereEvento(Evento evento) // INSERE UM NOVO EVENTO NA TABELA DE EVENTOS
         {
             var strInsert = "";
             strInsert += @"INSERT INTO tblEvento (sNome, sLocal, dData, 
@@ -29,7 +29,7 @@ namespace semanaTec.Aplicacao
             }
         }
 
-        public void atualizaEvento(Evento evento)
+        public void atualizaEvento(Evento evento) // ATUALIZA A TABELA DE EVENTOS
         {
             var strUpdate = "";
             strUpdate += @"UPDATE tblEvento SET ";
@@ -43,7 +43,8 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strUpdate);
             }
         }
-        public void salvaEvento(Evento evento)
+
+        public void salvaEvento(Evento evento) // SALVA O EVENTO
         {
             if (evento.Codigo > 0)
             {
@@ -52,7 +53,8 @@ namespace semanaTec.Aplicacao
             else
                 insereEvento(evento);
         }
-        public void deletaEvento(int codigo)
+
+        public void deletaEvento(int codigo) // DELETA UM EVENTO NA TABELA DE EVENTOS
         {
             var strDelete = string.Format(@"DELETE FROM tblEvento 
             WHERE nCodEv = {0}", codigo);
@@ -61,7 +63,7 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strDelete);
             }
         }
-        public List<Evento> selectEventos()
+        public List<Evento> selectEventos() // SELECIONA TODOS OS EVENTOS NA TABELA DE EVENTOS
         {
             var strSelect = "SELECT * FROM tblEvento";
             using (contexto = new Contexto())
@@ -70,30 +72,8 @@ namespace semanaTec.Aplicacao
                 return eventoReaderToObjectList(retornoDataReader);
             }
         }
-
-        public Evento selectEventoWhere(string nome)
-        {
-            var strSelectWhere = string.Format("SELECT * FROM tblEvento WHERE sNome = '{0}'", nome);
-            using (contexto = new Contexto())
-            {
-                var retornoDataReader = contexto.executaComandoRetorno(strSelectWhere);
-                return eventoReaderToObject(retornoDataReader);
-            }
-        }
-        public DataTable selectDTWhere(string nome)
-        {
-            var strSelectWhere = string.Format(@"SELECT ev.nCodEv, ev.sNome, ev.dData, 
-            ev.hHora, ev.sLocal, pl.nCodPal, pl.sNome FROM tblPalestrante pl 
-            INNER JOIN tblEvento ev ON pl.nCodPal = ev.nCodPal
-            WHERE ev.sNome = '{0}'", nome);
-            using (contexto = new Contexto())
-            {
-                var retornoDataReader = contexto.executaComandoRetorno(strSelectWhere);
-                return eventoReaderToDT(retornoDataReader);
-            }
-        }
-        public List<Evento> eventoReaderToObjectList(SqlDataReader reader)
-        {
+        private List<Evento> eventoReaderToObjectList(SqlDataReader reader) // CONVERTE OS EVENTOS TRAGOS PELO
+        {                                                                   // DATAREADER DO MÉTODO ACIMA EM OBJETOS DO TIPO EVENTO
             var eventos = new List<Evento>();
             while (reader.Read())
             {
@@ -116,7 +96,55 @@ namespace semanaTec.Aplicacao
 
             return eventos;
         }
-        public DataTable eventoReaderToDT(SqlDataReader reader)
+
+        public Evento selectEventoWhere(string nome) // SELECIONA TODAS AS INFORMAÇÕES DO EVENTO DESEJADO
+        {
+            var strSelectWhere = string.Format("SELECT * FROM tblEvento WHERE sNome = '{0}'", nome);
+            using (contexto = new Contexto())
+            {
+                var retornoDataReader = contexto.executaComandoRetorno(strSelectWhere);
+                return eventoReaderToObject(retornoDataReader);
+            }
+        }
+
+        private Evento eventoReaderToObject(SqlDataReader reader) // CONVERTE AS INFORMAÇÕES DO DATAREADER
+        {                                                         //  DO MÉTODO ACIMA EM UM OBJETO DO TIPO EVENTO
+            var evento = new Evento();
+            while (reader.Read())
+            {
+                var temp = new Evento
+                {
+                    Codigo = int.Parse(reader["nCodEv"].ToString()),
+                    Nome = reader["sNome"].ToString(),
+                    Local = reader["sLocal"].ToString(),
+                    Data = DateTime.Parse(reader["dData"].ToString()),
+                    Hora = DateTime.Parse(reader["hHora"].ToString()),
+                    Tipo = reader["sTipo"].ToString(),
+                    Duracao = int.Parse(reader["nDuracao"].ToString()),
+                    Descricao = reader["sDescricao"].ToString(),
+                    Vagas = int.Parse(reader["nVagas"].ToString()),
+                    CodPal = int.Parse(reader["nCodPal"].ToString()),
+                };
+                evento = temp;
+            }
+            reader.Close();
+            return evento;
+        }
+
+        public DataTable selectDTWhere(string nome) // TRAZ DETERMINADAS INFORMAÇÕES DA TABELA DE EVENTOS, JUNTAMENTE COM INFORMAÇÕES DA TABELA PALESTRANTE
+        {
+            var strSelectWhere = string.Format(@"SELECT ev.nCodEv, ev.sNome, ev.dData, 
+            ev.hHora, ev.sLocal, pl.nCodPal, pl.sNome as pNome FROM tblPalestrante pl 
+            INNER JOIN tblEvento ev ON pl.nCodPal = ev.nCodPal
+            WHERE ev.sNome = '{0}'", nome);
+            using (contexto = new Contexto())
+            {
+                var retornoDataReader = contexto.executaComandoRetorno(strSelectWhere);
+                return eventoReaderToDT(retornoDataReader);
+            }
+        }
+        
+        private DataTable eventoReaderToDT(SqlDataReader reader) // FAZ A CONVERSÃO DO DATAREADER LISTADO ACIMA EM UM DATATABLE
         {
             DataTable tbEsquema = reader.GetSchemaTable();
             DataTable tbRetorno = new DataTable();
@@ -146,24 +174,60 @@ namespace semanaTec.Aplicacao
             return tbRetorno;
         }
 
-        public Evento eventoReaderToObject(SqlDataReader reader)
+        public List<string> selectNomesEventos() // SELECIONA O NOME DA TABELA EVENTO
         {
-            var evento = new Evento();
-            while (reader.Read())
+            string strQuery = "SELECT sNome FROM tblEvento";
+            using(contexto = new Contexto())
             {
-                var temp = new Evento
-                {
-                    Codigo = int.Parse(reader["nCodEv"].ToString()),
-                    Nome = reader["sNome"].ToString(),
-                    Data = DateTime.Parse(reader["dData"].ToString()),
-                    Hora = DateTime.Parse(reader["hHora"].ToString()),
-                    Local = reader["sLocal"].ToString(),
-                    CodPal = int.Parse(reader["nCodPal"].ToString()),
-                };
-                evento = temp;
+                var retornoDataReader = contexto.executaComandoRetorno(strQuery);
+                return eventoNomeReaderToList(retornoDataReader);
             }
-            reader.Close();
-            return evento;
+        }
+        private List<string> eventoNomeReaderToList(SqlDataReader reader) // CONVERTE OS NOMES TRAGOS NO DATAREADER 
+        {                                                                 // DO MÉTODO ACIMA EM UMA LISTA DE STRINGS
+            var eventos = new List<string>();
+            while(reader.Read())
+            {
+                string evento = reader["sNome"].ToString();
+                eventos.Add(evento);
+            }
+            return eventos;            
+        }
+       
+        public bool existeEvento() // CHAMA O STORED PROCEDURE QUE VERIFICA SE EXISTE OU NÃO EVENTOS CADASTRADOS
+        {
+            string strQuery = "existeEvento";
+            bool existe = false;
+            using(contexto = new Contexto())
+            {
+                existe = contexto.executaScalar(strQuery);
+            }
+            return existe;
+        }
+        public int retornaCodEv(string valor) // CHAMA O STORED PROCEDURE QUE RETORNA O CÓDIGO DO EVENTO PASSADO POR PARAMETRO
+        {
+            string parametro = "@evento";
+            string strQuery = "returnCodEv";
+            int codigo = 0;
+            using(contexto = new Contexto())
+            {
+                codigo = contexto.executaScalar(strQuery,parametro,valor);                
+            }
+            return codigo;
+        }
+        public bool evSameTime(int codigo, DateTime data, DateTime hora)
+        {
+            string parametro = "@CodSi";
+            string parametro2 = "@dData";
+            string parametro3 = "@hHora";
+            string strQuery = "outroEvHora";
+            string date = data.ToString();
+            bool existe = false;
+            using(contexto = new Contexto())
+            {
+                existe = contexto.executaScalar(strQuery, parametro, codigo, parametro2, data.ToString(), parametro3, hora.ToString());
+            }
+            return existe;
         }
     }
 }

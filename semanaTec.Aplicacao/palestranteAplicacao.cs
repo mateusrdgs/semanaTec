@@ -13,7 +13,7 @@ namespace semanaTec.Aplicacao
     {
         private Contexto contexto;
 
-        public void inserePalestrante(Palestrante palestrante)
+        public void inserePalestrante(Palestrante palestrante) //INSERE NOVAS INFORMAÇÕES NA TABELA PALESTRANTE
         {
             var strInsert = "";
             strInsert += @"INSERT INTO tblPalestrante (sNome, sTitulacao,
@@ -27,7 +27,7 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strInsert);
             }
         }
-        public void atualizaPalestrante(Palestrante palestrante)
+        public void atualizaPalestrante(Palestrante palestrante) //ATUALIZA INFORMAÇÕES NA TABELA DE PALESTRANTE
         {
             var strUpdate = "";
             strUpdate += @"UPDATE tblPalestrante SET ";
@@ -38,7 +38,7 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strUpdate);
             }
         }
-        public void salvaPalestrante(Palestrante palestrante)
+        public void salvaPalestrante(Palestrante palestrante) // SALVA OU ATUALIZA A TABELA DE PALESTRANTE
         {
             if (selectPalestrante().Count(x => x.Codigo == palestrante.Codigo) > 0)
             {
@@ -51,13 +51,13 @@ namespace semanaTec.Aplicacao
         public void deletaPalestrante(string CPF)
         {
             var strDelete = "";
-            strDelete += string.Format(@"DELETE tblPalestrante WHERE sCPF = '{0}'", CPF);
+            strDelete += string.Format(@"DELETE tblPalestrante WHERE sCPF = '{0}'", CPF); // DELETA UM PALESTRANTE
             using(contexto = new Contexto())
             {
                 contexto.executaComando(strDelete);
             }
         }
-        public List<Palestrante> selectPalestrante()
+        public List<Palestrante> selectPalestrante() // SELECIONA TODAS AS INFORMAÇÕES DA TABELA DE PALESTRANTES
         {
             var strSelect = "SELECT * FROM tblPalestrante";
             using(contexto =new Contexto())
@@ -66,7 +66,7 @@ namespace semanaTec.Aplicacao
                 return palestranteReaderToObjectList(retornoDataReader);
             }
         }
-        public List<Palestrante> palestranteReaderToObjectList(SqlDataReader reader)
+        public List<Palestrante> palestranteReaderToObjectList(SqlDataReader reader) //CONVERTE O DATAREADER DA TABELA ACIMA EM OBJETOS DO TIPO PALESTRANTE
         {
             var palestrantes = new List<Palestrante>();
             while(reader.Read())

@@ -19,10 +19,10 @@ namespace semanaTec.Dominio
         private int codPal;
         private int vagas;
 
-        /*public Evento() 
+        public Evento() 
         { 
         
-        }*/
+        }
 
         public string Nome 
         {

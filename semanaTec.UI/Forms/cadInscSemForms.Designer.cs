@@ -47,6 +47,7 @@
             this.cpfMsk.Size = new System.Drawing.Size(119, 26);
             this.cpfMsk.TabIndex = 1;
             this.cpfMsk.Tag = "CPF";
+            this.cpfMsk.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // dataPck
             // 

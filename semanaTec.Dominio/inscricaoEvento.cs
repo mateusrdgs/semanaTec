@@ -8,19 +8,19 @@ namespace semanaTec.Dominio
 {
     public class inscricaoEvento
     {
-        private Participantes participante = new Participantes();
         private DateTime data;
         private int codigo;
         private Evento evento = new Evento();
+        private inscricaoSeminfo codSeminfo = new inscricaoSeminfo();
 
         public inscricaoEvento() 
         {
         
         }      
-        public string Cpf 
+        public int codigoSeminfo 
         {
-            get { return participante.Cpf; }
-            set { participante.Cpf = value; }
+            get { return codSeminfo.Codigo; }
+            set { codSeminfo.Codigo = value; }
         }
         public DateTime Data 
         {

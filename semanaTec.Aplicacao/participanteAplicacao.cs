@@ -13,7 +13,7 @@ namespace semanaTec.Aplicacao
     {
         private Contexto contexto;
 
-        private void insereParticipante(Participantes participante)
+        private void insereParticipante(Participantes participante) // INSERE UM NOVO PARTICIPANTE NA TABELA DE PARTICIPANTE
         {
             var strInsert = "";
             strInsert += string.Format(@"INSERT INTO tblParticipante
@@ -28,7 +28,7 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strInsert);
             }
         }
-        private void atualizaParticipante(Participantes participante)
+        private void atualizaParticipante(Participantes participante) // ATUALIZA AS INFORMAÇÕES DE DETERMINADO PARTICIPANTE
         {
             var strUpdate = "";
             strUpdate += string.Format(@"UPDATE tblParticipante SET 
@@ -43,7 +43,7 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strUpdate);
             }
         }
-        public void salvaParticipante(Participantes participante)
+        public void salvaParticipante(Participantes participante) // SALVA UM NOVO OU ATUALIZA AS INFORMAÇÕES DE UM PARTICIPANTE
         {            
             if(participante.Cpf == (selectParticipantes().Where(x=>x.Cpf == participante.Cpf)).ToString())
             {
@@ -52,7 +52,7 @@ namespace semanaTec.Aplicacao
             else
                 insereParticipante(participante);
         }
-        public void deletaParticipante(string CPF)
+        public void deletaParticipante(string CPF) // DELETA AS INFORMAÇÕES DE DETERMINADO PARTICIPANTE
         {
             var strDelete = string.Format(@"DELETE FROM tblParticipante WHERE sCPF = {0}", CPF);
             using(contexto = new Contexto())
@@ -60,7 +60,7 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strDelete);
             }
         }
-        public List<Participantes> selectParticipantes()
+        public List<Participantes> selectParticipantes() // SELECIONA AS INFORMAÇÕES DA TABELA DE PARTICIPANTE
         {
             var strSelect = "SELECT * FROM tblParticipante";
             using(contexto = new Contexto())
@@ -69,7 +69,29 @@ namespace semanaTec.Aplicacao
                 return participanteReaderToObjectList(retornoDataReader);
             }
         }
-        public Participantes selectParticipantesWhere(string CPF)
+        public List<Participantes> participanteReaderToObjectList(SqlDataReader reader) //CONVERTE AS INFORMAÇÕES DO DATAREADER
+        {                                                                               //TRAGO PELO MÉTODO ACIMA EM UMA LISTA DO TIPO PARTICIPANTE
+            var participantes = new List<Participantes>();
+            while (reader.Read())
+            {
+                var temp = new Participantes()
+                {
+                    Cpf = (reader["sCPF"].ToString()),
+                    Nome = (reader["sNome"].ToString()),
+                    Curso = (reader["sCurso"].ToString()),
+                    Periodo = int.Parse(reader["nPeriodo"].ToString()),
+                    Telefone = (reader["sTelefone"].ToString()),
+                    Email = (reader["sEmail"].ToString()),
+                    Login = (reader["sLogin"].ToString()),
+                    Senha = (reader["sSenha"].ToString()),
+                    Perfil = (reader["sPerfil"].ToString()),
+                };
+                participantes.Add(temp);
+            }
+            reader.Close();
+            return participantes;
+        }
+        public Participantes selectParticipantesWhere(string CPF) //SELECIONA AS INFORMAÇÕES DE DETERMINADO PARTICIPANTE
         {
             var strSelect = string.Format(@"SELECT * FROM tblParticipante
             WHERE sCPF = '{0}'", CPF);
@@ -79,8 +101,8 @@ namespace semanaTec.Aplicacao
                 return participanteReaderToObject(retornoDataReader);
             }
         }
-        public Participantes participanteReaderToObject(SqlDataReader reader)
-        {
+        public Participantes participanteReaderToObject(SqlDataReader reader) // CONVERTE AS INFORMAÇÕES DO DATAREADER TRAGO ACIMA 
+        {                                                                     // EM UM OBJETO DO TIPO PARTICIPANTE
             var participantes = new Participantes();
             while (reader.Read())
             {
@@ -101,27 +123,6 @@ namespace semanaTec.Aplicacao
             reader.Close();
             return participantes;
         }
-        public List<Participantes> participanteReaderToObjectList(SqlDataReader reader)
-        {
-            var participantes = new List<Participantes>();
-            while(reader.Read())
-            {
-                var temp = new Participantes()
-                {
-                    Cpf = (reader["sCPF"].ToString()),
-                    Nome = (reader["sNome"].ToString()),
-                    Curso = (reader["sCurso"].ToString()),
-                    Periodo = int.Parse(reader["nPeriodo"].ToString()),
-                    Telefone = (reader["sTelefone"].ToString()),
-                    Email = (reader["sEmail"].ToString()),
-                    Login = (reader["sLogin"].ToString()),
-                    Senha = (reader["sSenha"].ToString()),
-                    Perfil = (reader["sPerfil"].ToString()),
-                };
-                participantes.Add(temp);
-            }
-            reader.Close();
-            return participantes;
-        }
+        
     }
 }

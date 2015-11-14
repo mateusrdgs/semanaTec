@@ -24,11 +24,13 @@ namespace semanaTec.Forms
         inscricaoEventoAplicacao appInsc;
         participanteAplicacao appPart;
         inscricaoEvento inscricao;
+        inscricaoSeminfoAplicacao appInscSem;
+        isEmpty validaControles;
+        Evento evento;
 
         private void cadInscForms_Load(object sender, EventArgs e)
         {
             appEvento = new eventoAplicacao();
-            appEvento.selectEventos();
             foreach (var evento in appEvento.selectEventos())
             {
                 eventoCB.Items.Add(evento.Nome);
@@ -38,55 +40,62 @@ namespace semanaTec.Forms
 
         private void salvarBtn_Click(object sender, EventArgs e)
         {
-            cpfMsk.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            isEmpty validaControles = new isEmpty();
             try
             {
+                validaControles = new isEmpty();        
                 foreach (Control child in this.Controls)
                 {
                     string tag = validaControles.empty(child);
                     if (tag != "")
                     {
-                        throw new Exception("O campo " + "'" + tag + "'" + " está vazio");
+                        throw new Exception("O campo '" + tag + "' está vazio");
                     }
                     else
-                    { }
-                }
+                    {
+                        appInsc = new inscricaoEventoAplicacao();
+                        appPart = new participanteAplicacao();
+                        inscricao = new inscricaoEvento();
+                        appInscSem = new inscricaoSeminfoAplicacao();
+                        appEvento = new eventoAplicacao();
+                        evento = new Evento();
 
-                appInsc = new inscricaoEventoAplicacao();
-                appPart = new participanteAplicacao();
-                inscricao = new inscricaoEvento();
+                        if (!appInscSem.jaCadastrado(cpfMsk.Text))
+                        {
+                            throw new Exception("CPF ainda não cadastrado!!!");
+                        }
 
-                if (appPart.selectParticipantesWhere(cpfMsk.Text).Cpf == cpfMsk.Text)
-                {
-                    inscricao.Cpf = cpfMsk.Text;
+                        if (appInsc.cadastradoEvento(appEvento.retornaCodEv(eventoCB.Text), cpfMsk.Text))
+                        {
+                            throw new Exception("CPF já cadastrado neste evento!!!");
+                        }
+                        evento = appEvento.selectEventoWhere(eventoCB.Text);
+                        int codSeminfo = appInsc.retornoCodSeminfo(cpfMsk.Text);
+                        if (appEvento.evSameTime(codSeminfo, evento.Data, evento.Hora))
+                        {
+                            throw new Exception("CPF já cadastrado em outro evento no mesmo horário");
+                        }
+                        else
+                        {
+                            inscricao.Evento = evento.Codigo;
+                            inscricao.Data = evento.Data;
+                            inscricao.codigoSeminfo = codSeminfo;
+                            appInsc.salvar(inscricao);
+                            MessageBox.Show("Espectador cadastrado com sucesso!");
+                            break;
+                        }
+                    }
                 }
-                else
-                {
-                    throw new Exception("CPF ainda não cadastrado!!!");
-                }
-
-                if (appInsc.cpfJaCadastradoEvento(appEvento.selectEventoWhere(eventoCB.Text).Codigo, inscricao.Cpf) == true)
-                {
-                    throw new Exception("CPF já cadastrado neste evento!!!");
-                };
-
-                if (appEvento.selectEventos().Count > 0)
-                {
-                    inscricao.Evento = appEvento.selectEventoWhere(eventoCB.Text).Codigo;
-                    inscricao.Data = appEvento.selectEventoWhere(eventoCB.Text).Data;
-                }
-                else
-                {
-                    throw new Exception("Evento não cadastrado!!!");
-                }
-                appInsc.salvar(inscricao);
-                MessageBox.Show("Espectador cadastrado com sucesso!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void limparBtn_Click(object sender, EventArgs e)
+        {
+            cpfMsk.Clear();
+            eventoCB.SelectedIndex = -1;
         }
     }
 }

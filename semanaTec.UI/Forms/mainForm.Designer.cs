@@ -62,14 +62,16 @@
             // seminfoToolStripMenuItem
             // 
             this.seminfoToolStripMenuItem.Name = "seminfoToolStripMenuItem";
-            this.seminfoToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.seminfoToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.seminfoToolStripMenuItem.Text = "Seminfo";
+            this.seminfoToolStripMenuItem.Click += new System.EventHandler(this.seminfoToolStripMenuItem_Click);
             // 
             // eventosToolStripMenuItem
             // 
             this.eventosToolStripMenuItem.Name = "eventosToolStripMenuItem";
-            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
+            this.eventosToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.eventosToolStripMenuItem.Text = "Eventos";
+            this.eventosToolStripMenuItem.Click += new System.EventHandler(this.eventosToolStripMenuItem_Click);
             // 
             // cadastrarToolStripMenuItem
             // 
