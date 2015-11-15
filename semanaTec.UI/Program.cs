@@ -17,7 +17,7 @@ namespace semanaTec
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new cadInscEvForms());
+            Application.Run(new editEventoForms());
         }
     }
 }

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cleanControls.cs" />
     <Compile Include="criaLogin.cs" />
     <Compile Include="isEmpty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -95,6 +95,24 @@
     <Compile Include="Forms\conInscEvForms.Designer.cs">
       <DependentUpon>conInscEvForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\editEventoForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\editEventoForms.Designer.cs">
+      <DependentUpon>editEventoForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\editPalesForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\editPalesForms.Designer.cs">
+      <DependentUpon>editPalesForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\editPartForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\editPartForms.Designer.cs">
+      <DependentUpon>editPartForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\loginForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +147,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\conInscEvForms.resx">
       <DependentUpon>conInscEvForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\editEventoForms.resx">
+      <DependentUpon>editEventoForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\editPalesForms.resx">
+      <DependentUpon>editPalesForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\editPartForms.resx">
+      <DependentUpon>editPartForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\loginForms.resx">
       <DependentUpon>loginForms.cs</DependentUpon>

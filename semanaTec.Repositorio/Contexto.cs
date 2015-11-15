@@ -36,6 +36,7 @@ namespace semanaTec.Repositorio
             var cmdComando = new SqlCommand(strCommand, minhaConexao);
             return cmdComando.ExecuteReader();
         }
+
         public dynamic executaScalar(string strCommand)
         {
             if (minhaConexao.State == ConnectionState.Closed)

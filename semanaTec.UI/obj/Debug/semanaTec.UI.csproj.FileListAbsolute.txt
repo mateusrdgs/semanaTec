@@ -44,3 +44,6 @@ C:\Users\Mateus\Documents\Visual Studio 2013\Projects\semanaTec\semanaTec.UI\bin
 C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.Forms.cadInscEvForms.resources
 C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.Forms.conInscEvForms.resources
 C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.Forms.cadInscSemForms.resources
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.Forms.editPalesForms.resources
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.Forms.editPartForms.resources
+C:\Users\Mateus\documents\visual studio 2013\Projects\semanaTec\semanaTec.UI\obj\Debug\semanaTec.Forms.editEventoForms.resources

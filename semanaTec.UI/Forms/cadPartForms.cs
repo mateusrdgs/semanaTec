@@ -48,7 +48,7 @@ namespace semanaTec.Forms
                 participante.Login = loginTxt.Text;
                 participante.Senha = senhaTxt.Text;
                 participante.Perfil = perfilCB.Text;
-                appPart.salvaParticipante(participante);
+                appPart.salvaParticipante(participante, participante.Cpf);
                 MessageBox.Show("Participante salvo com sucesso!");
             }
 

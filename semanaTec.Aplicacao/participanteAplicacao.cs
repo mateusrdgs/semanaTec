@@ -28,29 +28,36 @@ namespace semanaTec.Aplicacao
                 contexto.executaComando(strInsert);
             }
         }
-        private void atualizaParticipante(Participantes participante) // ATUALIZA AS INFORMAÇÕES DE DETERMINADO PARTICIPANTE
+        private void atualizaParticipante(Participantes participante, string cpf) // ATUALIZA AS INFORMAÇÕES DE DETERMINADO PARTICIPANTE
         {
             var strUpdate = "";
             strUpdate += string.Format(@"UPDATE tblParticipante SET 
-            (sCPF, sNome, sEmail, sTelefone, sLogin, sSenha, sPerfil, 
-            nPeriodo, sCurso) VALUES ('{0}', '{1}', '{2}', {3}, '{4}', 
-            '{5}', '{6}', '{7}', '{8}')", participante.Cpf, participante.Nome,
+            sCPF = '{0}', sNome = '{1}', sEmail = '{2}', sTelefone = '{3}', 
+            sLogin = '{4}', sSenha = '{5}', sPerfil = '{6}', nPeriodo = {7}, 
+            sCurso = '{8}' WHERE sCPF = '{9}'", participante.Cpf, participante.Nome,
             participante.Email, participante.Telefone, participante.Login,
             participante.Senha, participante.Perfil, participante.Periodo,
-            participante.Curso);
+            participante.Curso, cpf);
             using (contexto = new Contexto())
             {
                 contexto.executaComando(strUpdate);
             }
         }
-        public void salvaParticipante(Participantes participante) // SALVA UM NOVO OU ATUALIZA AS INFORMAÇÕES DE UM PARTICIPANTE
-        {            
-            if(participante.Cpf == (selectParticipantes().Where(x=>x.Cpf == participante.Cpf)).ToString())
+        public void salvaParticipante(Participantes participante, string cpf) // SALVA UM NOVO OU ATUALIZA AS INFORMAÇÕES DE UM PARTICIPANTE
+        {
+            try
             {
-                atualizaParticipante(participante);
+                if (selectParticipantesWhere(cpf).Cpf == cpf)
+                {
+                    atualizaParticipante(participante, cpf);
+                }
+                else
+                    insereParticipante(participante);
             }
-            else
-                insereParticipante(participante);
+            catch(Exception ex)
+            {
+                string y = ex.Message;
+            }
         }
         public void deletaParticipante(string CPF) // DELETA AS INFORMAÇÕES DE DETERMINADO PARTICIPANTE
         {

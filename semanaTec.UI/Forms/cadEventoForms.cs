@@ -57,7 +57,7 @@ namespace semanaTec.Forms
                 evento.CodPal = Convert.ToInt32(codPTxt.Text);
                 evento.Vagas = Convert.ToInt32(vagasTxt.Text);
                 
-                appEvento.salvaEvento(evento);
+                appEvento.salvaEvento(evento, 0);
                 MessageBox.Show("Salvo com sucesso!");
             }
             catch (Exception ex)

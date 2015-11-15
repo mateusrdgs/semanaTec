@@ -44,7 +44,7 @@ namespace semanaTec.Forms
                 palestrante.Email = emailTxt.Text;
                 palestrante.Telefone = telMsk.Text;
                 palestrante.MiniCurriculum = miniCTxt.Text;
-                appPalest.salvaPalestrante(palestrante);
+                appPalest.salvaPalestrante(palestrante, palestrante.Nome);
                 MessageBox.Show("Palestrante salvo com sucesso!");
             }
             catch(Exception ex)

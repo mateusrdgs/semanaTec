@@ -29,26 +29,26 @@ namespace semanaTec.Aplicacao
             }
         }
 
-        public void atualizaEvento(Evento evento) // ATUALIZA A TABELA DE EVENTOS
+        public void atualizaEvento(Evento evento, int codigo) // ATUALIZA A TABELA DE EVENTOS
         {
             var strUpdate = "";
             strUpdate += @"UPDATE tblEvento SET ";
             strUpdate += string.Format(@"sNome = '{0}', sLocal = '{1}', dData = '{2}',
-            hHora = '{3}', sTipo = '{4}', nDuracao = '{5}', sDescricao = '{6}', 
-            nCodPalest = '{7}', nVagas = '{8}')",
+            hHora = '{3}', sTipo = '{4}', nDuracao = {5}, sDescricao = '{6}', 
+            nVagas = {7}, nCodPal = {8} WHERE nCodEv = {9}",
             evento.Nome, evento.Local, evento.Data, evento.Hora, evento.Tipo,
-            evento.Duracao, evento.Descricao, evento.CodPal, evento.Vagas);
+            evento.Duracao, evento.Descricao, evento.Vagas, evento.CodPal, codigo);
             using (contexto = new Contexto())
             {
                 contexto.executaComando(strUpdate);
             }
         }
 
-        public void salvaEvento(Evento evento) // SALVA O EVENTO
+        public void salvaEvento(Evento evento, int codigo) // SALVA O EVENTO
         {
-            if (evento.Codigo > 0)
+            if (codigo > 0)
             {
-                atualizaEvento(evento);
+                atualizaEvento(evento, codigo);
             }
             else
                 insereEvento(evento);
