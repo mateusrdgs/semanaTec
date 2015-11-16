@@ -150,6 +150,7 @@
             this.Controls.Add(this.limparBtn);
             this.Name = "cadInscEvForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Inscrição em evento";
             this.Load += new System.EventHandler(this.cadInscForms_Load);
             this.inscricaoEvento.ResumeLayout(false);
             this.inscricaoEvento.PerformLayout();

@@ -192,7 +192,7 @@
             this.MainMenuStrip = this.mainMenu;
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Semana Tecnológica";
+            this.Text = "Tela principal - Semana Tecnológica";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();

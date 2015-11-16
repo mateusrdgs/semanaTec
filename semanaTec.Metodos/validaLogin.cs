@@ -27,5 +27,21 @@ namespace semanaTec.Metodos
             }
             return perfil;            
         }
+        public string cpfLogin(string login, string password)
+        {
+            string cpf = "";
+            string strLogin = string.Format(@"SELECT sCPF
+            FROM tblParticipante WHERE sLogin = '{0}' 
+            AND sSenha = '{1}'", login, password);
+            using(contexto = new Contexto())
+            {
+                SqlDataReader reader = contexto.executaComandoRetorno(strLogin);
+                while (reader.Read())
+                {
+                    cpf = reader["sCPF"].ToString();
+                }  
+            }
+            return cpf;
+        }
     }
 }

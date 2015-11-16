@@ -273,7 +273,7 @@
             this.Controls.Add(this.salvarBtn);
             this.Name = "editPalesForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "editPalesForms";
+            this.Text = "Editar palestrante";
             this.Load += new System.EventHandler(this.editPalesForms_Load);
             this.infoPalest.ResumeLayout(false);
             this.infoPalest.PerformLayout();

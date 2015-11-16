@@ -36,13 +36,13 @@ namespace semanaTec
         validaLogin logar = new validaLogin();
         private void mainForm_Load(object sender, EventArgs e)
         {
-            /*if(Properties.Settings.Default.Perfil == "Administrador")
+            if(Properties.Settings.Default.Perfil == "Administrador")
             { }
             else
             {
                 cadastrarToolStripMenuItem.Enabled = false;
                 editarToolStripMenuItem.Enabled = false;
-            }*/
+            }
             MaximizeBox = false;            
         }
 

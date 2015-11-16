@@ -30,13 +30,21 @@ namespace semanaTec.Forms
 
         private void cadInscForms_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.Perfil == "Administrador")
+            { }
+            else
+            {
+                cpfMsk.Text = Properties.Settings.Default.CPF;
+                cpfMsk.Enabled = false;
+            }
+
             appEvento = new eventoAplicacao();
             foreach (var evento in appEvento.selectEventos())
             {
                 eventoCB.Items.Add(evento.Nome);
             }
             eventoCB.SelectedIndex = -1;
-            this.ActiveMdiChild.Dock = DockStyle.Fill;
+            this.ActiveMdiChild.Dock = DockStyle.Fill;            
         }
 
         private void salvarBtn_Click(object sender, EventArgs e)

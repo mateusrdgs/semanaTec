@@ -223,7 +223,7 @@
             this.Controls.Add(this.salvarBtn);
             this.Name = "cadPalesForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "cadPalesForms";
+            this.Text = "Cadastro de palestrante";
             this.Load += new System.EventHandler(this.cadPalesForms_Load);
             this.infoPalest.ResumeLayout(false);
             this.infoPalest.PerformLayout();

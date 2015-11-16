@@ -129,7 +129,6 @@ namespace semanaTec.Aplicacao
             }
             reader.Close();
             return participantes;
-        }
-        
+        }        
     }
 }

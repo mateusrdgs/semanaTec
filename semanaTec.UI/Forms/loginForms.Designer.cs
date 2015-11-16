@@ -32,13 +32,14 @@
             this.senhaTxt = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.newUserLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.loginLbl = new System.Windows.Forms.Label();
+            this.senhaLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loginTxt
             // 
             this.loginTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginTxt.Location = new System.Drawing.Point(216, 117);
+            this.loginTxt.Location = new System.Drawing.Point(216, 92);
             this.loginTxt.Name = "loginTxt";
             this.loginTxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.loginTxt.Size = new System.Drawing.Size(182, 26);
@@ -85,29 +86,41 @@
             this.newUserLbl.MouseLeave += new System.EventHandler(this.newUserLbl_MouseLeave);
             this.newUserLbl.MouseHover += new System.EventHandler(this.newUserLbl_MouseHover);
             // 
-            // label1
+            // loginLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(275, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Tag = "Entrar";
-            this.label1.Text = "ENTRAR";
+            this.loginLbl.AutoSize = true;
+            this.loginLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginLbl.Location = new System.Drawing.Point(284, 73);
+            this.loginLbl.Name = "loginLbl";
+            this.loginLbl.Size = new System.Drawing.Size(41, 16);
+            this.loginLbl.TabIndex = 6;
+            this.loginLbl.Tag = "Entrar";
+            this.loginLbl.Text = "Login";
+            // 
+            // senhaLbl
+            // 
+            this.senhaLbl.AutoSize = true;
+            this.senhaLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.senhaLbl.Location = new System.Drawing.Point(284, 143);
+            this.senhaLbl.Name = "senhaLbl";
+            this.senhaLbl.Size = new System.Drawing.Size(47, 16);
+            this.senhaLbl.TabIndex = 7;
+            this.senhaLbl.Text = "Senha";
             // 
             // loginForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 294);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.senhaLbl);
+            this.Controls.Add(this.loginLbl);
             this.Controls.Add(this.newUserLbl);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.senhaTxt);
             this.Controls.Add(this.loginTxt);
             this.Name = "loginForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +132,7 @@
         private System.Windows.Forms.TextBox senhaTxt;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label newUserLbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label loginLbl;
+        private System.Windows.Forms.Label senhaLbl;
     }
 }

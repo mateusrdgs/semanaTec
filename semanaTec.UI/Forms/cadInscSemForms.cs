@@ -22,7 +22,13 @@ namespace semanaTec.Forms
         }
         private void cadInscSemForms_Load(object sender, EventArgs e)
         {
-
+            if (Properties.Settings.Default.Perfil == "Administrador")
+            { }
+            else
+            {
+                cpfMsk.Text = Properties.Settings.Default.CPF;
+                cpfMsk.Enabled = false;
+            }
             this.ActiveMdiChild.Dock = DockStyle.Fill;
         }
 

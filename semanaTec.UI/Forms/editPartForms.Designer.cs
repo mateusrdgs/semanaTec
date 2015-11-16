@@ -386,7 +386,7 @@
             this.Controls.Add(this.infoPesGB);
             this.Name = "editPartForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "editPartForms";
+            this.Text = "Editar participante";
             this.Load += new System.EventHandler(this.editPartForms_Load);
             this.infoAcadGB.ResumeLayout(false);
             this.infoAcadGB.PerformLayout();

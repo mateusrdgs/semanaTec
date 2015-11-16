@@ -51,8 +51,8 @@ namespace semanaTec.Forms
                     else
                     { }
                 }
-
                 Properties.Settings.Default.Perfil = logar.logar(loginTxt.Text, senhaTxt.Text);
+                Properties.Settings.Default.CPF = logar.cpfLogin(loginTxt.Text, senhaTxt.Text);
                 if (Properties.Settings.Default.Perfil == "Aluno" || Properties.Settings.Default.Perfil == "Administrador")
                 {
                     MessageBox.Show("Login efetuado com sucesso!", "Bem-vindo");

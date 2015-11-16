@@ -371,7 +371,7 @@
             this.Controls.Add(this.infoPesGB);
             this.Name = "cadPartForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " Cadastro de participante";
             this.Load += new System.EventHandler(this.cadPartForms_Load);
             this.infoPesGB.ResumeLayout(false);
             this.infoPesGB.PerformLayout();

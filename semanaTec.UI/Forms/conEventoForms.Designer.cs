@@ -92,7 +92,7 @@
             this.Controls.Add(this.eventoInfo);
             this.Name = "conEventoForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "conEventoForms";
+            this.Text = "Consulta de eventos";
             this.Load += new System.EventHandler(this.conEventoForms_Load);
             this.eventoInfo.ResumeLayout(false);
             this.eventoInfo.PerformLayout();

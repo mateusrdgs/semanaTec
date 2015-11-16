@@ -129,7 +129,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "cadInscSemForms";
+            this.Text = "Inscrição na Semana da Informática";
             this.Load += new System.EventHandler(this.cadInscSemForms_Load);
             this.seminfoGB.ResumeLayout(false);
             this.seminfoGB.PerformLayout();

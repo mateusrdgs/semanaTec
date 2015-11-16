@@ -34,5 +34,17 @@ namespace semanaTec.Properties {
                 this["Perfil"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"\"")]
+        public string CPF {
+            get {
+                return ((string)(this["CPF"]));
+            }
+            set {
+                this["CPF"] = value;
+            }
+        }
     }
 }

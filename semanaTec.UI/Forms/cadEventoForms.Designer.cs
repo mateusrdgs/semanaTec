@@ -307,7 +307,7 @@
             this.Controls.Add(this.eventoInfo);
             this.Name = "cadEventoForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "cadEventoForm";
+            this.Text = "Cadastro de eventos";
             this.eventoInfo.ResumeLayout(false);
             this.eventoInfo.PerformLayout();
             this.ResumeLayout(false);
