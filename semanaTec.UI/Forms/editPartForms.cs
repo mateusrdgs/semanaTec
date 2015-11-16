@@ -21,15 +21,16 @@ namespace semanaTec.Forms
         }
         participanteAplicacao appPart;
         Participantes participante = new Participantes();
+
         private void editPartForms_Load(object sender, EventArgs e)
         {
-
+            this.ActiveMdiChild.Dock = DockStyle.Fill;
         }
 
         private void buscarBtn_Click(object sender, EventArgs e)
         {
             appPart = new participanteAplicacao();
-            participante = appPart.selectParticipantesWhere("12728661650");
+            participante = appPart.selectParticipantesWhere(cpfMsk.Text);
             cpfMsk.Text = participante.Cpf;
             nomeTxt.Text = participante.Nome;
             telTxt.Text = participante.Telefone;
@@ -43,6 +44,17 @@ namespace semanaTec.Forms
 
         private void salvarBtn_Click(object sender, EventArgs e)
         {
+            isEmpty validaControles = new isEmpty();
+            foreach (Control child in this.Controls)
+            {
+                string tag = validaControles.empty(child);
+                if (tag != "")
+                {
+                    throw new Exception("O campo " + "'" + tag + "'" + " está vazio");
+                }
+                else
+                { }
+            }
             var cpf = participante.Cpf;
             participante.Cpf = cpfMsk.Text;
             participante.Nome = nomeTxt.Text;

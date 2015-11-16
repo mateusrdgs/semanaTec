@@ -330,6 +330,7 @@
             this.Controls.Add(this.limparBtn);
             this.Controls.Add(this.eventoInfo);
             this.Name = "editEventoForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "editEventoForms";
             this.Load += new System.EventHandler(this.editEventoForms_Load);
             this.eventoInfo.ResumeLayout(false);

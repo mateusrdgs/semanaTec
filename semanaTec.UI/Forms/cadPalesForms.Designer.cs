@@ -222,7 +222,9 @@
             this.Controls.Add(this.limparBtn);
             this.Controls.Add(this.salvarBtn);
             this.Name = "cadPalesForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cadPalesForms";
+            this.Load += new System.EventHandler(this.cadPalesForms_Load);
             this.infoPalest.ResumeLayout(false);
             this.infoPalest.PerformLayout();
             this.ResumeLayout(false);

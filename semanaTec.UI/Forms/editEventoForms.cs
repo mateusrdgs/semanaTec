@@ -1,5 +1,6 @@
 ﻿using semanaTec.Aplicacao;
 using semanaTec.Dominio;
+using semanaTec.Metodos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,8 @@ namespace semanaTec.Forms
 
         private void editEventoForms_Load(object sender, EventArgs e)
         {
+            this.ActiveMdiChild.Dock = DockStyle.Fill;
+
             foreach (var evento in appEvento.selectNomesEventos())
             {
                 eventoCB.Items.Add(evento);
@@ -47,17 +50,35 @@ namespace semanaTec.Forms
 
         private void salvarBtn_Click(object sender, EventArgs e)
         {
-            evento.Codigo = codigo;
-            evento.Nome = nomeTxt.Text;
-            evento.Local = localTxt.Text;
-            evento.Data = DateTime.Parse(dataPck.Text);
-            evento.Hora = DateTime.Parse(horaPck.Text);
-            evento.CodPal = int.Parse(codPTxt.Text);
-            evento.Duracao = int.Parse(duracaoTxt.Text);
-            evento.Vagas = int.Parse(vagasTxt.Text);
-            evento.Descricao = descricaoTxt.Text;
-            appEvento.salvaEvento(evento, codigo);
-            MessageBox.Show("Alterações salvas com sucesso!");
+            isEmpty validaControles = new isEmpty();
+            try
+            {
+                foreach (Control child in this.Controls)
+                {
+                    string tag = validaControles.empty(child);
+                    if (tag != "")
+                    {
+                        throw new Exception("O campo " + "'" + tag + "'" + " está vazio");
+                    }
+                    else
+                    { }                    
+                }
+                evento.Codigo = codigo;
+                evento.Nome = nomeTxt.Text;
+                evento.Local = localTxt.Text;
+                evento.Data = DateTime.Parse(dataPck.Text);
+                evento.Hora = DateTime.Parse(horaPck.Text);
+                evento.CodPal = int.Parse(codPTxt.Text);
+                evento.Duracao = int.Parse(duracaoTxt.Text);
+                evento.Vagas = int.Parse(vagasTxt.Text);
+                evento.Descricao = descricaoTxt.Text;
+                appEvento.salvaEvento(evento, codigo);
+                MessageBox.Show("Alterações salvas com sucesso!");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
         }        
     }
 }

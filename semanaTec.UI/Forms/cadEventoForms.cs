@@ -20,12 +20,6 @@ namespace semanaTec.Forms
             InitializeComponent();
             ActiveControl = nomeTxt;
         }
-
-        private void cadEventoForms_Load(object sender, EventArgs e)
-        {
-            this.MdiParent.Size = new Size(550, (450 + (this.MdiParent.MainMenuStrip.Size).Height));
-        }
-
         private void salvarBtn_Click(object sender, EventArgs e)
         {
             isEmpty validaControles = new isEmpty();

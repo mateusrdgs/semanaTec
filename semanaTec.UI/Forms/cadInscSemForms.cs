@@ -20,7 +20,12 @@ namespace semanaTec.Forms
             InitializeComponent();
             dataPck.Value = DateTime.Now.Date;
         }
-        
+        private void cadInscSemForms_Load(object sender, EventArgs e)
+        {
+
+            this.ActiveMdiChild.Dock = DockStyle.Fill;
+        }
+
         private void salvarBtn_Click(object sender, EventArgs e)
         {
             try

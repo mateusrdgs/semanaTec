@@ -272,6 +272,7 @@
             this.Controls.Add(this.limparBtn);
             this.Controls.Add(this.salvarBtn);
             this.Name = "editPalesForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "editPalesForms";
             this.Load += new System.EventHandler(this.editPalesForms_Load);
             this.infoPalest.ResumeLayout(false);

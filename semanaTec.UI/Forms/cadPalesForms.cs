@@ -21,6 +21,11 @@ namespace semanaTec.Forms
             ActiveControl = nomeTxt;
         }
 
+        private void cadPalesForms_Load(object sender, EventArgs e)
+        {
+            this.ActiveMdiChild.Dock = DockStyle.Fill;
+        }
+
         private void salvarBtn_Click(object sender, EventArgs e)
         {
             isEmpty validaControles = new isEmpty();

@@ -126,7 +126,11 @@
             this.Controls.Add(this.limparBtn);
             this.Controls.Add(this.salvarBtn);
             this.Name = "cadInscSemForms";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cadInscSemForms";
+            this.Load += new System.EventHandler(this.cadInscSemForms_Load);
             this.seminfoGB.ResumeLayout(false);
             this.seminfoGB.PerformLayout();
             this.ResumeLayout(false);

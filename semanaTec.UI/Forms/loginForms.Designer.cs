@@ -108,7 +108,6 @@
             this.Controls.Add(this.loginTxt);
             this.Name = "loginForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "x\'";
             this.ResumeLayout(false);
             this.PerformLayout();
 

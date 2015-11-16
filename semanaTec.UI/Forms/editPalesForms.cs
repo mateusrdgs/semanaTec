@@ -1,5 +1,6 @@
 ﻿using semanaTec.Aplicacao;
 using semanaTec.Dominio;
+using semanaTec.Metodos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,7 @@ namespace semanaTec.Forms
 
         private void editPalesForms_Load(object sender, EventArgs e)
         {
+            this.ActiveMdiChild.Dock = DockStyle.Fill;
             palesApp = new palestranteAplicacao();
             try
             {
@@ -58,8 +60,21 @@ namespace semanaTec.Forms
 
         private void salvarBtn_Click(object sender, EventArgs e)
         {
+
+            isEmpty validaControles = new isEmpty();
             try
             {
+                foreach (Control child in this.Controls)
+                {
+                    string tag = validaControles.empty(child);
+                    if (tag != "")
+                    {
+                        throw new Exception("O campo " + "'" + tag + "'" + " está vazio");
+                    }
+                    else
+                    { }
+                }                
+
                 palestrante = new Palestrante();
                 palestrante.Codigo = int.Parse(codValorLbl.Text);
                 palestrante.Nome = nomeTxt.Text;

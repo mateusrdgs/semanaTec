@@ -306,9 +306,8 @@
             this.Controls.Add(this.limparBtn);
             this.Controls.Add(this.eventoInfo);
             this.Name = "cadEventoForms";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cadEventoForm";
-            this.Load += new System.EventHandler(this.cadEventoForms_Load);
             this.eventoInfo.ResumeLayout(false);
             this.eventoInfo.PerformLayout();
             this.ResumeLayout(false);

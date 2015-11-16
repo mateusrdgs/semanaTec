@@ -15,13 +15,12 @@ namespace semanaTec.Metodos
             string tag = "";
             foreach (Control child in controls.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
             {
-                if (child is TextBox && (string.IsNullOrEmpty(child.Text)
-                || string.IsNullOrWhiteSpace(child.Text)) ||
-                child.Text == string.Empty)
-                {
-                   tag = child.Tag.ToString();
-                   break;
-                }
+                if(child is Label)
+                { }
+                else if (child is Button)
+                { }
+                else if (child is DataGridView)
+                { }
                 else if (child is TextBox)
                 {
                     if (string.IsNullOrEmpty(child.Text)

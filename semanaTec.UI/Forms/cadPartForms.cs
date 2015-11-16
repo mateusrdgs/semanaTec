@@ -15,8 +15,7 @@ namespace semanaTec.Forms
         }
         private void cadPartForms_Load(object sender, EventArgs e)
         {
-            ActiveControl = nomeTxt;
-            perfilCB.SelectedIndex = 0;
+            this.ActiveMdiChild.Dock = DockStyle.Fill;        
         }
         criaLogin novoLogin = new criaLogin();
         Participantes participante = new Participantes();

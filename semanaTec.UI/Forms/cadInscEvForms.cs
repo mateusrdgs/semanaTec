@@ -36,6 +36,7 @@ namespace semanaTec.Forms
                 eventoCB.Items.Add(evento.Nome);
             }
             eventoCB.SelectedIndex = -1;
+            this.ActiveMdiChild.Dock = DockStyle.Fill;
         }
 
         private void salvarBtn_Click(object sender, EventArgs e)

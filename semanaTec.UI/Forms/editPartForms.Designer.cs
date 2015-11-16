@@ -45,6 +45,7 @@
             this.senhaLbl = new System.Windows.Forms.Label();
             this.loginLbl = new System.Windows.Forms.Label();
             this.infoPesGB = new System.Windows.Forms.GroupBox();
+            this.buscarBtn = new System.Windows.Forms.Button();
             this.cpfLbl = new System.Windows.Forms.Label();
             this.cpfMsk = new System.Windows.Forms.MaskedTextBox();
             this.nomeTxt = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.emailTxt = new System.Windows.Forms.TextBox();
             this.emailLbl = new System.Windows.Forms.Label();
             this.telefoneLbl = new System.Windows.Forms.Label();
-            this.buscarBtn = new System.Windows.Forms.Button();
             this.infoAcadGB.SuspendLayout();
             this.infoPesGB.SuspendLayout();
             this.SuspendLayout();
@@ -285,6 +285,16 @@
             this.infoPesGB.TabStop = false;
             this.infoPesGB.Text = "Informações pessoais";
             // 
+            // buscarBtn
+            // 
+            this.buscarBtn.Location = new System.Drawing.Point(225, 26);
+            this.buscarBtn.Name = "buscarBtn";
+            this.buscarBtn.Size = new System.Drawing.Size(75, 30);
+            this.buscarBtn.TabIndex = 3;
+            this.buscarBtn.Text = "Buscar";
+            this.buscarBtn.UseVisualStyleBackColor = true;
+            this.buscarBtn.Click += new System.EventHandler(this.buscarBtn_Click);
+            // 
             // cpfLbl
             // 
             this.cpfLbl.AutoSize = true;
@@ -365,16 +375,6 @@
             this.telefoneLbl.TabIndex = 4;
             this.telefoneLbl.Text = "Telefone";
             // 
-            // buscarBtn
-            // 
-            this.buscarBtn.Location = new System.Drawing.Point(225, 26);
-            this.buscarBtn.Name = "buscarBtn";
-            this.buscarBtn.Size = new System.Drawing.Size(75, 30);
-            this.buscarBtn.TabIndex = 3;
-            this.buscarBtn.Text = "Buscar";
-            this.buscarBtn.UseVisualStyleBackColor = true;
-            this.buscarBtn.Click += new System.EventHandler(this.buscarBtn_Click);
-            // 
             // editPartForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,6 +385,7 @@
             this.Controls.Add(this.infoAcadGB);
             this.Controls.Add(this.infoPesGB);
             this.Name = "editPartForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "editPartForms";
             this.Load += new System.EventHandler(this.editPartForms_Load);
             this.infoAcadGB.ResumeLayout(false);

@@ -2,6 +2,7 @@
 using semanaTec.Repositorio;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -73,7 +74,7 @@ namespace semanaTec.Aplicacao
             {
                 var temp = new inscricaoEvento()
                 {
-                    Codigo = int.Parse(reader["nCodInsc"].ToString()),                    
+                    Codigo = int.Parse(reader["nCodInsc"].ToString()),
                     Evento = int.Parse(reader["nCodEv"].ToString()),
                     codigoSeminfo = int.Parse(reader["nCodSi"].ToString())
                 };
@@ -82,29 +83,52 @@ namespace semanaTec.Aplicacao
             reader.Close();
             return inscricoes;
         }
-        /*public bool cpfJaCadastradoEvento(int nCodEv, string sCPF) // VERIFICA SE O CPF PASSADO POR PARAMETRO EXISTE NAQUELE DETERMINADO EVENTO
+        public DataTable retornaEventosInscritos(string cpf)
         {
-            int n = 0;
-            string strSelect = string.Format(@"SELECT COUNT(sCPF) FROM
-            tblInscEvento i, tblParticipante p WHERE i.nCodEv = {0} AND p.sCPF = '{1}'", nCodEv, sCPF);
-            contexto = new Contexto();
-            SqlDataReader retorno = contexto.executaComandoRetorno(strSelect);
-            try
+            string strQuery = string.Format(@"SELECT ev.sNome 
+            FROM tblParticipante p
+            INNER JOIN tblInscSeminfo ism
+            ON p.sCPF = ism.sCPF
+            INNER JOIN tblInscEvento iev
+            ON iev.nCodSi = ism.nCodSi
+            INNER JOIN tblEvento ev
+            ON iev.nCodEv = ev.nCodEv
+            WHERE p.sCPF = '{0}'", cpf);
+            using (contexto = new Contexto())
             {
-                while (retorno.Read())
+                var retornoDataReader = contexto.executaComandoRetorno(strQuery);
+                return eventoInscritosReaderToDT(retornoDataReader);
+            }
+        }
+        private DataTable eventoInscritosReaderToDT(SqlDataReader reader) // FAZ A CONVERSÃO DO DATAREADER LISTADO ACIMA EM UM DATATABLE
+        {
+            DataTable tbEsquema = reader.GetSchemaTable();
+            DataTable tbRetorno = new DataTable();
+            foreach (DataRow r in tbEsquema.Rows)
+            {
+                if (!tbRetorno.Columns.Contains(r["ColumnName"].ToString()))
                 {
-                    n = int.Parse(retorno.GetValue(0).ToString());
+                    DataColumn col = new DataColumn()
+                    {
+                        ColumnName = r["ColumnName"].ToString(),
+                        Unique = Convert.ToBoolean(r["IsUnique"]),
+                        AllowDBNull = Convert.ToBoolean(r["AllowDBNull"]),
+                        ReadOnly = Convert.ToBoolean(r["IsReadOnly"])
+                    };
+                    tbRetorno.Columns.Add(col);
                 }
             }
-            catch (Exception ex)
+            while (reader.Read())
             {
-                throw new Exception(ex.Message);
+                DataRow novaLinha = tbRetorno.NewRow();
+                for (int i = 0; i < tbRetorno.Columns.Count; i++)
+                {
+                    novaLinha[i] = reader.GetValue(i);
+                }
+                tbRetorno.Rows.Add(novaLinha);
             }
-            if (n == 0)
-                return false;
-            else
-                return true;
-        }*/
+            return tbRetorno;
+        }
 
         public bool cadastradoEvento(int codigo, string cpf) // CHAMA O STORED PROCEDURE QUE VERIFICA SE 
         {                                                    //DETERMINADO CPF JA ESTÁ CADASTRADO NAQUELE EVENTO
@@ -112,11 +136,11 @@ namespace semanaTec.Aplicacao
             bool existe = false;
             string parametro = "@Cod";
             string parametro2 = "@CPF";
-            using(contexto = new Contexto())
+            using (contexto = new Contexto())
             {
                 existe = contexto.executaScalar(strProcedure, parametro, codigo, parametro2, cpf);
             }
-            return existe;            
+            return existe;
         }
 
         public int retornoCodSeminfo(string cpf) // RETORNA O CÓDIGO DE INSCRIÇÃO NA SEMINFO DO CPF DESEJADO

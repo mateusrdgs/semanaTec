@@ -23,6 +23,7 @@ namespace semanaTec.Forms
         eventoAplicacao appEvento;
         private void conEventoForms_Load(object sender, EventArgs e)
         {
+            this.ActiveMdiChild.Dock = DockStyle.Fill;
             appEvento = new eventoAplicacao();
             appEvento.selectEventos();
             foreach (var evento in appEvento.selectEventos())

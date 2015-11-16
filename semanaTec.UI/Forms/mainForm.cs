@@ -1,5 +1,6 @@
 ﻿using semanaTec.Dominio;
 using semanaTec.Forms;
+using semanaTec.Metodos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,20 +22,28 @@ namespace semanaTec
             InitializeComponent();
         }
         cadEventoForms cadEventoForm;
+        cadInscEvForms cadInscEvForm;
+        cadInscSemForms cadInscSemForm;
         cadPalesForms cadPalesForm;
         cadPartForms cadPartForm;
-        cadInscEvForms cadInscForm;
         conEventoForms conEventoForm;
         conInscEvForms conInscForm;
+        editEventoForms editEvForm;
+        editPalesForms editPalesForm;
+        editPartForms editPartForm;
         Evento evento = new Evento();
         inscricaoEvento insc = new inscricaoEvento();
-        cadInscSemForms cadInscSemForm;
-        cadInscEvForms cadInscEvForm;
-
+        validaLogin logar = new validaLogin();
         private void mainForm_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show("Bem vindo Mateus", "Mateus", MessageBoxButtons.OK);
-            MaximizeBox = false;
+            /*if(Properties.Settings.Default.Perfil == "Administrador")
+            { }
+            else
+            {
+                cadastrarToolStripMenuItem.Enabled = false;
+                editarToolStripMenuItem.Enabled = false;
+            }*/
+            MaximizeBox = false;            
         }
 
         private void eventoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,25 +99,6 @@ namespace semanaTec
             cadPartForm.MdiParent = this;
             cadPartForm.Show();   
         }
-
-        private void inscriçãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (this.ActiveMdiChild != null)
-            {
-                this.ActiveMdiChild.Hide();
-            }
-            cadInscForm = null;
-
-            if (cadInscForm == null || cadInscForm.IsDisposed)
-            {
-                cadInscForm = new cadInscEvForms();
-            }
-
-            cadInscForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            cadInscForm.MdiParent = this;
-            cadInscForm.Show();  
-        }
-
         private void eventoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (this.ActiveMdiChild != null)
@@ -199,6 +189,61 @@ namespace semanaTec
             cadInscEvForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             cadInscEvForm.MdiParent = this;
             cadInscEvForm.Show();  
+        }
+
+        private void eventoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            editEvForm = null;
+
+            if (editEvForm == null || cadInscEvForm.IsDisposed)
+            {
+                editEvForm = new editEventoForms();
+            }
+
+            editEvForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            editEvForm.MdiParent = this;
+            editEvForm.Show();
+        }
+
+        private void palestranteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            editPalesForm = null;
+
+            if (editPalesForm == null || cadInscEvForm.IsDisposed)
+            {
+                editPalesForm = new editPalesForms();
+            }
+
+            editPalesForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            editPalesForm.MdiParent = this;
+            editPalesForm.Show();
+
+        }
+
+        private void participaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Hide();
+            }
+            editPartForm = null;
+
+            if (editPartForm == null || editPartForm.IsDisposed)
+            {
+                editPartForm = new editPartForms();
+            }
+
+            editPartForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            editPartForm.MdiParent = this;
+            editPartForm.Show();
         }
     }
 }

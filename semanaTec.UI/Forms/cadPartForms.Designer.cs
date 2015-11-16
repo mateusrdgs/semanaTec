@@ -244,7 +244,6 @@
             // perfilCB
             // 
             this.perfilCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.perfilCB.Enabled = false;
             this.perfilCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.perfilCB.FormattingEnabled = true;
             this.perfilCB.ItemHeight = 20;
@@ -371,6 +370,7 @@
             this.Controls.Add(this.infoAcadGB);
             this.Controls.Add(this.infoPesGB);
             this.Name = "cadPartForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.cadPartForms_Load);
             this.infoPesGB.ResumeLayout(false);
