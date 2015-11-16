@@ -17,6 +17,8 @@ namespace semanaTec.Metodos
                 { }
                 else if (child is Button)
                 { }
+                else if (child is DataGridView)
+                { }
                 else if (child is TextBox)
                 {
                     if (!string.IsNullOrEmpty(child.Text)

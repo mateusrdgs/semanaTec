@@ -102,6 +102,7 @@
             this.limparBtn.TabIndex = 4;
             this.limparBtn.Text = "Limpar";
             this.limparBtn.UseVisualStyleBackColor = true;
+            this.limparBtn.Click += new System.EventHandler(this.limparBtn_Click);
             // 
             // seminfoGB
             // 

@@ -31,7 +31,7 @@ namespace semanaTec.Forms
             isEmpty validaControles = new isEmpty();
             try
             {
-                foreach (Control child in this.Controls)
+                foreach (Control child in this.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
                 {
                     string tag = validaControles.empty(child);
                     if (tag != "")
@@ -56,6 +56,11 @@ namespace semanaTec.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void limparBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

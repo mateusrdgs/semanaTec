@@ -113,7 +113,7 @@
             this.nomeTxt.Location = new System.Drawing.Point(66, 38);
             this.nomeTxt.Name = "nomeTxt";
             this.nomeTxt.Size = new System.Drawing.Size(433, 26);
-            this.nomeTxt.TabIndex = 1;
+            this.nomeTxt.TabIndex = 2;
             this.nomeTxt.Tag = "Nome";
             // 
             // miniCTxt
@@ -123,7 +123,7 @@
             this.miniCTxt.Multiline = true;
             this.miniCTxt.Name = "miniCTxt";
             this.miniCTxt.Size = new System.Drawing.Size(411, 178);
-            this.miniCTxt.TabIndex = 6;
+            this.miniCTxt.TabIndex = 7;
             this.miniCTxt.Tag = "Mini curriculum";
             // 
             // cidadeTxt
@@ -132,7 +132,7 @@
             this.cidadeTxt.Location = new System.Drawing.Point(283, 74);
             this.cidadeTxt.Name = "cidadeTxt";
             this.cidadeTxt.Size = new System.Drawing.Size(216, 26);
-            this.cidadeTxt.TabIndex = 3;
+            this.cidadeTxt.TabIndex = 4;
             this.cidadeTxt.Tag = "Cidade";
             // 
             // emailTxt
@@ -141,7 +141,7 @@
             this.emailTxt.Location = new System.Drawing.Point(88, 117);
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(189, 26);
-            this.emailTxt.TabIndex = 4;
+            this.emailTxt.TabIndex = 5;
             this.emailTxt.Tag = "Email";
             // 
             // telMsk
@@ -151,7 +151,7 @@
             this.telMsk.Mask = "(00) 0000-0000";
             this.telMsk.Name = "telMsk";
             this.telMsk.Size = new System.Drawing.Size(116, 26);
-            this.telMsk.TabIndex = 5;
+            this.telMsk.TabIndex = 6;
             this.telMsk.Tag = "Telefone";
             // 
             // titulacaoCB
@@ -167,7 +167,7 @@
             this.titulacaoCB.Location = new System.Drawing.Point(88, 74);
             this.titulacaoCB.Name = "titulacaoCB";
             this.titulacaoCB.Size = new System.Drawing.Size(124, 28);
-            this.titulacaoCB.TabIndex = 2;
+            this.titulacaoCB.TabIndex = 3;
             this.titulacaoCB.Tag = "Titulação";
             // 
             // salvarBtn
@@ -190,6 +190,7 @@
             this.limparBtn.TabIndex = 7;
             this.limparBtn.Text = "Limpar";
             this.limparBtn.UseVisualStyleBackColor = true;
+            this.limparBtn.Click += new System.EventHandler(this.limparBtn_Click);
             // 
             // infoPalest
             // 
@@ -209,7 +210,7 @@
             this.infoPalest.Location = new System.Drawing.Point(12, 12);
             this.infoPalest.Name = "infoPalest";
             this.infoPalest.Size = new System.Drawing.Size(510, 342);
-            this.infoPalest.TabIndex = 14;
+            this.infoPalest.TabIndex = 1;
             this.infoPalest.TabStop = false;
             this.infoPalest.Text = "Informações do palestrante";
             // 

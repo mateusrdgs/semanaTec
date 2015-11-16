@@ -26,8 +26,12 @@ namespace semanaTec.Metodos
                     if (string.IsNullOrEmpty(child.Text)
                     || (string.IsNullOrWhiteSpace(child.Text)
                     || child.Text == string.Empty))
+                    {
                         tag = child.Tag.ToString();
-                    break;
+                        break;
+                    }
+                    else
+                    { }
                 }
                 else if (child is MaskedTextBox)
                 {

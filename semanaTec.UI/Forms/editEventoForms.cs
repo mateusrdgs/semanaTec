@@ -79,6 +79,15 @@ namespace semanaTec.Forms
             {
                 MessageBox.Show(ex.Message);
             }            
+        }
+
+        private void limparBtn_Click(object sender, EventArgs e)
+        {
+            cleanControls limpaControles = new cleanControls();
+            foreach (Control child in this.Controls.OfType<GroupBox>())
+            {
+                limpaControles.limpa(child);
+            }
         }        
     }
 }

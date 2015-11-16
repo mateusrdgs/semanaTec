@@ -75,6 +75,7 @@
             this.limparBtn.TabIndex = 21;
             this.limparBtn.Text = "Limpar";
             this.limparBtn.UseVisualStyleBackColor = true;
+            this.limparBtn.Click += new System.EventHandler(this.limparBtn_Click);
             // 
             // eventoInfo
             // 

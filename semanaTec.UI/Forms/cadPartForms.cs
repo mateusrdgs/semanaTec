@@ -68,5 +68,14 @@ namespace semanaTec.Forms
                 MessageBox.Show("O campo 'Nome' está vazio");
             }
         }
+
+        private void limparBtn_Click(object sender, EventArgs e)
+        {
+            cleanControls limpaControles = new cleanControls();
+            foreach (Control child in this.Controls.OfType<GroupBox>())
+            {
+                limpaControles.limpa(child);
+            }
+        }
     }
 }
