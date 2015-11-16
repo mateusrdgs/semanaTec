@@ -173,7 +173,7 @@
             // salvarBtn
             // 
             this.salvarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salvarBtn.Location = new System.Drawing.Point(100, 370);
+            this.salvarBtn.Location = new System.Drawing.Point(149, 370);
             this.salvarBtn.Name = "salvarBtn";
             this.salvarBtn.Size = new System.Drawing.Size(75, 30);
             this.salvarBtn.TabIndex = 8;
@@ -184,7 +184,7 @@
             // limparBtn
             // 
             this.limparBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.limparBtn.Location = new System.Drawing.Point(358, 370);
+            this.limparBtn.Location = new System.Drawing.Point(295, 370);
             this.limparBtn.Name = "limparBtn";
             this.limparBtn.Size = new System.Drawing.Size(75, 30);
             this.limparBtn.TabIndex = 7;
@@ -222,7 +222,9 @@
             this.Controls.Add(this.limparBtn);
             this.Controls.Add(this.salvarBtn);
             this.Name = "cadPalesForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cadPalesForms";
+            this.Load += new System.EventHandler(this.cadPalesForms_Load);
             this.infoPalest.ResumeLayout(false);
             this.infoPalest.PerformLayout();
             this.ResumeLayout(false);

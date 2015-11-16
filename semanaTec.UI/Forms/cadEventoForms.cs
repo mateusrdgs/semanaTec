@@ -1,5 +1,6 @@
 ﻿using semanaTec.Aplicacao;
 using semanaTec.Dominio;
+using semanaTec.Metodos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,24 +20,21 @@ namespace semanaTec.Forms
             InitializeComponent();
             ActiveControl = nomeTxt;
         }
-
-        private void cadEventoForms_Load(object sender, EventArgs e)
-        {
-            this.MdiParent.Size = new Size(550, (450 + (this.MdiParent.MainMenuStrip.Size).Height));
-        }
-
         private void salvarBtn_Click(object sender, EventArgs e)
         {
+            isEmpty validaControles = new isEmpty();
             try
             {
-                foreach (Control child in eventoInfo.Controls)
+                foreach (Control child in this.Controls)
                 {
-                    if (child is TextBox && (child.Text == null || child.Text == ""))
+                    string tag = validaControles.empty(child);
+                    if (tag != "")
                     {
-                        throw new Exception("O campo " + child.Tag + " está vazio...");
+                        throw new Exception("O campo " + "'" + tag + "'" + " está vazio");
                     }
+                    else
+                    { }
                 }
-
                 var appEvento = new eventoAplicacao();
                 var evento = new Evento();
                 evento.Nome = nomeTxt.Text;
@@ -53,7 +51,7 @@ namespace semanaTec.Forms
                 evento.CodPal = Convert.ToInt32(codPTxt.Text);
                 evento.Vagas = Convert.ToInt32(vagasTxt.Text);
                 
-                appEvento.salvaEvento(evento);
+                appEvento.salvaEvento(evento, 0);
                 MessageBox.Show("Salvo com sucesso!");
             }
             catch (Exception ex)

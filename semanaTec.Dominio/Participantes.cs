@@ -15,7 +15,7 @@ namespace semanaTec.Dominio
         private string email;
         private string login;
         private string senha;
-        private string perfil; //1 - ADMIN(TRUE) 0 - ALUNO(FALSE)
+        private string perfil;
         private int periodo;
 
         public Participantes()

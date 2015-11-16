@@ -16,13 +16,13 @@ namespace semanaTec.Dominio
         private string descricao;
         private int codigo;
         private int duracao;
-        private int codPales;
+        private int codPal;
         private int vagas;
 
-        /*public Evento() 
+        public Evento() 
         { 
         
-        }*/
+        }
 
         public string Nome 
         {
@@ -66,8 +66,8 @@ namespace semanaTec.Dominio
         }
         public int CodPal 
         {
-            get { return codPales; }
-            set { codPales = value; }
+            get { return codPal; }
+            set { codPal = value; }
         }
         public int Vagas 
         {

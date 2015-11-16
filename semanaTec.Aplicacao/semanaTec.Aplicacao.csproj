@@ -40,7 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="eventoAplicacao.cs" />
-    <Compile Include="inscricaoAplicacao.cs" />
+    <Compile Include="inscricaoEventoAplicacao.cs" />
+    <Compile Include="inscricaoSeminfoAplicacao.cs" />
     <Compile Include="palestranteAplicacao.cs" />
     <Compile Include="participanteAplicacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,11 +59,17 @@
     <Compile Include="Forms\cadEventoForms.Designer.cs">
       <DependentUpon>cadEventoForms.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\cadInscForms.cs">
+    <Compile Include="Forms\cadInscEvForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\cadInscForms.Designer.cs">
-      <DependentUpon>cadInscForms.cs</DependentUpon>
+    <Compile Include="Forms\cadInscEvForms.Designer.cs">
+      <DependentUpon>cadInscEvForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\cadInscSemForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\cadInscSemForms.Designer.cs">
+      <DependentUpon>cadInscSemForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\cadPalesForms.cs">
       <SubType>Form</SubType>
@@ -82,11 +89,29 @@
     <Compile Include="Forms\conEventoForms.Designer.cs">
       <DependentUpon>conEventoForms.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\conInscForms.cs">
+    <Compile Include="Forms\conInscEvForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\conInscForms.Designer.cs">
-      <DependentUpon>conInscForms.cs</DependentUpon>
+    <Compile Include="Forms\conInscEvForms.Designer.cs">
+      <DependentUpon>conInscEvForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\editEventoForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\editEventoForms.Designer.cs">
+      <DependentUpon>editEventoForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\editPalesForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\editPalesForms.Designer.cs">
+      <DependentUpon>editPalesForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\editPartForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\editPartForms.Designer.cs">
+      <DependentUpon>editPartForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\loginForms.cs">
       <SubType>Form</SubType>
@@ -100,15 +125,16 @@
     <Compile Include="Forms\mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Métodos e validações\vinculaObjeto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Métodos e validações\validaCPF.cs" />
     <EmbeddedResource Include="Forms\cadEventoForms.resx">
       <DependentUpon>cadEventoForms.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\cadInscForms.resx">
-      <DependentUpon>cadInscForms.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\cadInscEvForms.resx">
+      <DependentUpon>cadInscEvForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\cadInscSemForms.resx">
+      <DependentUpon>cadInscSemForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\cadPalesForms.resx">
       <DependentUpon>cadPalesForms.cs</DependentUpon>
@@ -119,8 +145,17 @@
     <EmbeddedResource Include="Forms\conEventoForms.resx">
       <DependentUpon>conEventoForms.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\conInscForms.resx">
-      <DependentUpon>conInscForms.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\conInscEvForms.resx">
+      <DependentUpon>conInscEvForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\editEventoForms.resx">
+      <DependentUpon>editEventoForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\editPalesForms.resx">
+      <DependentUpon>editPalesForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\editPartForms.resx">
+      <DependentUpon>editPartForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\loginForms.resx">
       <DependentUpon>loginForms.cs</DependentUpon>
@@ -139,7 +174,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -149,7 +184,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\semanaTec.Aplicacao\semanaTec.Aplicacao.csproj">
@@ -159,6 +196,10 @@
     <ProjectReference Include="..\semanaTec.Dominio\semanaTec.Dominio.csproj">
       <Project>{f75b833a-748d-4f2c-b8e4-18417b4e7b6c}</Project>
       <Name>semanaTec.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\semanaTec.Metodos\semanaTec.Metodos.csproj">
+      <Project>{63eff848-579f-46d8-a9c9-8dcba10ccc20}</Project>
+      <Name>semanaTec.Metodos</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

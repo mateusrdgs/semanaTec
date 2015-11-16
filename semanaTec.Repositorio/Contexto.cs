@@ -36,6 +36,66 @@ namespace semanaTec.Repositorio
             var cmdComando = new SqlCommand(strCommand, minhaConexao);
             return cmdComando.ExecuteReader();
         }
+
+        public dynamic executaScalar(string strCommand)
+        {
+            if (minhaConexao.State == ConnectionState.Closed)
+                minhaConexao.Open();
+            var cmdComando = new SqlCommand
+            {
+                Connection = minhaConexao,
+                CommandText = strCommand,
+                CommandType = CommandType.StoredProcedure
+            };
+            var fenda = cmdComando.ExecuteScalar();
+            return fenda;
+        }
+        
+        public dynamic executaScalar(string strCommand, string parametro, string valor) 
+        {
+            if (minhaConexao.State == ConnectionState.Closed)
+                minhaConexao.Open();
+            var cmdComando = new SqlCommand
+            {
+                Connection = minhaConexao,
+                CommandText = strCommand,
+                CommandType = CommandType.StoredProcedure
+            };
+            cmdComando.Parameters.AddWithValue(parametro, valor);
+            var fenda = cmdComando.ExecuteScalar();
+            return fenda;
+        }
+        public dynamic executaScalar(string strCommand, string parametro, int codigo, string parametro2, string valor)
+        {
+            if (minhaConexao.State == ConnectionState.Closed)
+                minhaConexao.Open();
+            var cmdComando = new SqlCommand
+            {
+                Connection = minhaConexao,
+                CommandText = strCommand,
+                CommandType = CommandType.StoredProcedure
+            };
+            cmdComando.Parameters.AddWithValue(parametro, codigo);
+            cmdComando.Parameters.AddWithValue(parametro2, valor);
+            var fenda = cmdComando.ExecuteScalar();
+            return fenda;
+        }
+        public dynamic executaScalar(string strCommand, string parametro, int codigo, string parametro2, string valor, string parametro3, string valor2)
+        {
+            if (minhaConexao.State == ConnectionState.Closed)
+                minhaConexao.Open();
+            var cmdComando = new SqlCommand
+            {
+                Connection = minhaConexao,
+                CommandText = strCommand,
+                CommandType = CommandType.StoredProcedure
+            };
+            cmdComando.Parameters.AddWithValue(parametro, codigo);
+            cmdComando.Parameters.AddWithValue(parametro2, valor);
+            cmdComando.Parameters.AddWithValue(parametro3, valor2);
+            var fenda = cmdComando.ExecuteScalar();
+            return fenda;
+        }
         public void Dispose() // Método para fechar a conexão com o banco após uma execução
         {
             if (minhaConexao.State == ConnectionState.Open)

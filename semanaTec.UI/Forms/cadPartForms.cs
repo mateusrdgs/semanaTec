@@ -1,14 +1,9 @@
 ﻿using semanaTec.Aplicacao;
 using semanaTec.Dominio;
+using semanaTec.Metodos;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace semanaTec.Forms
 {
@@ -18,33 +13,29 @@ namespace semanaTec.Forms
         {
             InitializeComponent();
         }
-
         private void cadPartForms_Load(object sender, EventArgs e)
         {
-            ActiveControl = nomeTxt;
+            this.ActiveMdiChild.Dock = DockStyle.Fill;        
         }
+        criaLogin novoLogin = new criaLogin();
+        Participantes participante = new Participantes();
+        participanteAplicacao appPart = new participanteAplicacao();
 
         private void salvarBtn_Click(object sender, EventArgs e)
         {
+            isEmpty validaControles = new isEmpty();
             try
             {
-                cpfMsk.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                telTxt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                foreach(Control group in Controls)
+                foreach (Control child in this.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
                 {
-                    foreach(Control child in group.Controls)
+                    string tag = validaControles.empty(child);
+                    if (tag != "")
                     {
-                        if(child is TextBox && (string.IsNullOrEmpty(child.Text)
-                        || string.IsNullOrWhiteSpace(child.Text)) || 
-                        child.Text == string.Empty)
-                        {
-                            throw new Exception("O campo " + child.Tag + " está vazio...");
-                        }
+                        throw new Exception("O campo " + "'" + tag + "'" + " está vazio");
                     }
+                    else
+                    { }
                 }
-
-                Participantes participante = new Participantes();
-                participanteAplicacao appPart = new participanteAplicacao();
                 cpfMsk.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                 telTxt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                 participante.Cpf = cpfMsk.Text;
@@ -56,16 +47,26 @@ namespace semanaTec.Forms
                 participante.Login = loginTxt.Text;
                 participante.Senha = senhaTxt.Text;
                 participante.Perfil = perfilCB.Text;
-                appPart.salvaParticipante(participante);
+                appPart.salvaParticipante(participante, participante.Cpf);
                 MessageBox.Show("Participante salvo com sucesso!");
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-
+        private void loginGnrBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                loginTxt.Text = novoLogin.crialogin(nomeTxt.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("O campo 'Nome' está vazio");
+            }
+        }
     }
 }
